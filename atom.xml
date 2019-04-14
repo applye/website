@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-04-13T18:06:55.863Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>John Doe</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2019/04/14/side%E4%BE%A7%E6%BB%91%E6%A0%8F%E7%BB%84%E4%BB%B6/"/>
+    <id>http://yoursite.com/2019/04/14/side侧滑栏组件/</id>
+    <published>2019-04-13T18:06:01.277Z</published>
+    <updated>2019-04-13T18:06:55.863Z</updated>
+    
+    <content type="html"><![CDATA[<p>#React Native 第三方组件react-native-side-menu -侧滑栏使用</p><p>##简介<br>  添加应用侧滑功能， 使用第三方组件。比如：react-native-side-menu。</p><p>  地址：<a href="https://github.com/react-native-community/react-native-side-menu" target="_blank">https://github.com/react-native-community/react-native-side-menu</a> </p><p>(1). 安装</p><pre><code>npm install react-native-side-menu --save</code></pre><p>(2).导入</p><pre><code>import SideMenu from &apos;react-native-side-menu&apos;;</code></pre><p>(3).出现的错误</p><p>Warning: setState(…): Cannot update during an existing state transition (such as within <code>render</code> or another component’s constructor). Render methods should be a pure function of props and state; constructor side-effects are an anti-pattern, but can be moved to <code>componentWillMount</code>.</p><p>大体意思是说render 在这种需要props和state进行渲染的方法中，不能在对props和state进行更新。 React 会在state和props改变的时候调用render进行DOM diff然后渲染，如果渲染在对props和state进行更新，就进入死循环。</p><p>解决办法：在调用方法时创建一个匿名函数，再调用。</p><p>(4).代码示例</p><pre><code>homeUI.jsimport React, { Component } from &apos;react&apos;import {    AppRegistry,    StyleSheet,    Text,    View,    Image,    WebView,    ListView,    ScrollView,    navigator,    TouchableOpacity,} from &apos;react-native&apos;import SideMenu from &apos;react-native-side-menu&apos;import Menu from &apos;./menu&apos;/** *  * SideMenu 使用示例 * @export HomeUI * @class HomeUI * @extends {Component} */export default class HomeUI extends Component {constructor(props) {    super(props);    this.state = {        isOpen: false,        selectedItem: &apos;About&apos;,    };}onMenuItemSelected = (item) =&gt; {    this.setState({        isOpen: false,        selectedItem: item,    })}updateMenu(isOpen) {    this.setState({        isOpen: isOpen    });}toggle() {    this.setState({        isOpen: !this.state.isOpen    });}render() {    const menu = &lt;Menu onItemSelected={this.onMenuItemSelected} navigator={navigator} /&gt;;    return (        &lt;SideMenu            menu={menu}            isOpen={this.state.isOpen}            onChange={(isOpen) =&gt; this.updateMenu(isOpen)}&gt;            &lt;View style={styles.container}&gt;                &lt;Text style={{ fontSize: 20, textAlign: 'center', margin: 10 }}&gt;hello world react native&lt;/Text&gt;                &lt;Text&gt;                    选中菜单是： {this.state.selectedItem}                &lt;/Text&gt;            &lt;/View&gt;            &lt;TouchableOpacity style={styles.button} onPress={() =&gt; this.toggle()}&gt;                &lt;Image style={{ width: 32, height: 32 }} source={require(&apos;./images/image_menu.png&apos;)} /&gt;            &lt;/TouchableOpacity&gt;        &lt;/SideMenu&gt;    )}}const styles = StyleSheet.create({flex: {    flex: 1,},ListView: {    paddingTop: 20,    backgroundColor: &apos;#F5FCFF&apos;,},container: {    flex: 1,    backgroundColor: &apos;#F5FCFF&apos;,    justifyContent: &apos;center&apos;,    alignItems: &apos;center&apos;,},button: {    position: &apos;absolute&apos;,    top: 20,    padding: 10,},});menu.jsimport React,{Component} from &apos;react&apos;import {AppRegistry,StyleSheet,Dimensions,ScrollView,Text,Image,View,} from &apos;react-native&apos;const window = Dimensions.get(&apos;window&apos;);/** * 菜单组件 *  * @class Menu* @extends {Component} */class Menu extends Component {static PropTypes = {    onItemSelected: React.PropTypes.func.isRequired,};render() {    return(        &lt;ScrollView scrollsToTop={false} style={styles.menu}&gt;            &lt;View style={styles.avatarConent}&gt;                &lt;Image style={styles.avatar}                    source={require(&apos;./images/avatar.jpg&apos;)} /&gt;                    &lt;Text style={styles.name}&gt; 小程QQ昵称&lt;/Text&gt;            &lt;/View&gt;            &lt;Text onPress={() =&gt; this.props.onItemSelected(&apos;作者&apos;)} style={styles.item}&gt;                作者            &lt;/Text&gt;            &lt;Text onPress={() =&gt; this.props.onItemSelected(&apos;联系美丽蓝天&apos;)} style={styles.item}&gt;                联系美丽蓝天            &lt;/Text&gt;        &lt;/ScrollView&gt;    )}}const styles =  StyleSheet.create({menu: {    flex:1,    width: window.width,    height: window.height,    backgroundColor: &apos;gray&apos;,    padding: 20,},avatarConent: {    marginBottom: 20,    marginTop:20,        },avatar: {    width:48,    height:48,    borderRadius: 24,    flex:1,},name:{    position: &apos;absolute&apos;,    left: 70,    top:20,},item: {    fontSize:16,    fontWeight:&apos;300&apos;,    paddingTop:10,},})export default Menu;</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;#React Native 第三方组件react-native-side-menu -侧滑栏使用&lt;/p&gt;
+&lt;p&gt;##简介&lt;br&gt;  添加应用侧滑功能， 使用第三方组件。比如：react-native-side-menu。&lt;/p&gt;
+&lt;p&gt;  地址：&lt;a href=&quot;https
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2019/04/13/hello-world/"/>
+    <id>http://yoursite.com/2019/04/13/hello-world/</id>
+    <published>2019-04-13T13:38:00.100Z</published>
+    <updated>2019-04-13T15:30:38.253Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
