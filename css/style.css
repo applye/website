@@ -239,7 +239,7 @@ pre {
   position: relative;
   text-align: center;
   line-height: 0;
-  height: 180px;
+  height: 280px;
   width: 100%;
   background: #fff url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg);
   background-repeat: repeat;
@@ -253,11 +253,11 @@ pre {
 .main-header .main-header-box {
   position: relative;
   width: 100%;
-  padding-top: 30px;
+  padding-top: 45px;
 }
 .main-header .main-header-box a.header-avatar img {
-  width: 82px;
-  height: 82px;
+  width: 100px;
+  height: 100px;
   max-width: 100%;
   border-radius: 50%;
 }
