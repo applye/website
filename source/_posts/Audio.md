@@ -1,8 +1,7 @@
 ---
 abbrlink: 8
 title: H5 Audio 对象介绍
-categories:
-  - '前端'
+categories: 前端
 tags:
   - '前端'
   - 'h5'

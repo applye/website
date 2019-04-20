@@ -1,8 +1,7 @@
 ---
 abbrlink: 5
 title: javaScript基础知识
-categories:
-  - '前端'
+categories: '前端'
 tags:
   - '前端'
   - 'javaScript'

@@ -1,8 +1,7 @@
 ---
 abbrlink: 3
 title: React Native APi AsyncStorage的使用
-categories:
-  - '前端'
+categories: '前端'
 tags:
   - '前端'
   - 'react-native'

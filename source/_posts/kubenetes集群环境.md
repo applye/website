@@ -1,7 +1,6 @@
 ---
 title: kubenetes集群环境
-categories:
-  - '工具'
+categories: '工具'
 tags:
   - 'k8s'
   - '环境搭建'

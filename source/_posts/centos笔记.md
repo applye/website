@@ -1,8 +1,7 @@
 ---
 abbrlink: 7
 title: Centos 笔记
-categories:
-  - '工具'
+categories: 工具
 tags:
   - '工具'
   - 'centos7'

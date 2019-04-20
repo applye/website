@@ -1,8 +1,7 @@
 ---
 abbrlink: 4
 title: git配置用户密码
-categories:
-  - '工具'
+categories: '工具'
 tags:
   - '工具'
   - 'git'

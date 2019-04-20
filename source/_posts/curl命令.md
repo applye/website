@@ -1,8 +1,7 @@
 ---
 abbrlink: 6
 title: curl常用命令
-categories:
-  - '工具'
+categories: '工具'
 tags:
   - '工具'
   - 'curl'
