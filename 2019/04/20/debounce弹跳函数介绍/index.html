@@ -16,10 +16,10 @@
     <link rel="dns-prefetch" href="//website.cwzcfj.cn">
     <!--SEO-->
 
-    <meta name="keywords" content="前端， 后端，javascript, node">
+    <meta name="keywords" content="工具,debounce">
 
 
-    <meta name="description" content="个人博客网站">
+    <meta name="description" content="debounce去弹跳函数 原lodash.debouncedebounce 强制函数再某段时间内只执行一次throttle 强制函数以固定的频率触发的 DOM 事情的时候，他们都能极大提高用户...">
 
 
 
@@ -31,7 +31,7 @@
     <!--Title-->
 
 
-<title>标签: js | 小橙</title>
+<title>debounce弹跳函数介绍 | 小橙</title>
 
 
     <link rel="alternate" href="/atom.xml" title="小橙" type="application/atom+xml">
@@ -122,53 +122,84 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content ">
-                    <ol class="breadcrumb">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="debounce弹跳函数介绍">
+            
+	            debounce弹跳函数介绍
+            
+        </h1>
+        <div class="post-meta">
     
-    
-        <li>
-            js
-        </li>
-    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/工具/">工具</a>
+        </span>
     
 
-</ol>
-
-
-    <article class="post">
-        
-            <div class="post-media">
-                <a href="/2019/04/15/js正则表达式/">
-                    <img class="img-ajax" src="/img/loading.gif" data-src="http://i2.bvimg.com/683865/4cc9747c79574865s.jpg" alt="javaScript 正则表达式">
-                </a>
-            </div>
-        
-        <div class="post-content">
-            <div class="post-head home-post-head">
-                <h1 class="post-title">
-                    <a href="/2019/04/15/js正则表达式/">javaScript 正则表达式</a>
-                </h1>
-                <div class="post-meta">  &bull;
-                    <time class="post-date" datetime title>
-                        2019年04月15日
-                    </time>
-                </div>
-            </div>
-            <p class="brief">
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
                 
-                    正则表达式规则
-普通字符
- 字母、数字、汉子、下划线、以及没有特殊定义的标点符号，都是普通字符。
-
-简单转义字符
-  采用前面加”/“的方法进行。
-12345678910111213\r, \n  代表回车和换行符	\t      制...
+                    <a class="tag-link" href="/tags/debounce/">debounce</a> <a class="tag-link" href="/tags/工具/">工具</a>
                 
-            </p>
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/04/20</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="debounce去弹跳函数-原lodash-debounce"><a href="#debounce去弹跳函数-原lodash-debounce" class="headerlink" title="debounce去弹跳函数 原lodash.debounce"></a>debounce去弹跳函数 原lodash.debounce</h2><p>debounce 强制函数再某段时间内只执行一次<br>throttle 强制函数以固定的频率触发的 DOM 事情的时候，他们都能极大提高用户体验.</p>
+<p>dobounce 返回了一个闭包，这个闭包依然会被连续频繁地调用，但是在闭包内部，却限制了原始函数fn的执行，强制fn只在连续操作停止后只执行一次<br>大致核心代码如下：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function debounce(<span class="function"><span class="keyword">fun</span>, delay) &#123;</span></span><br><span class="line">  <span class="keyword">var</span> timer;</span><br><span class="line">  <span class="keyword">return</span> function() &#123;</span><br><span class="line">    <span class="keyword">var</span> content = <span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">var</span> args =  arguments;</span><br><span class="line">    clearTimeout(timer);</span><br><span class="line">    timer = setTimeout(function() &#123;</span><br><span class="line">      <span class="function"><span class="keyword">fun</span>.<span class="title">apply</span><span class="params">(content, args)</span></span>;</span><br><span class="line">    &#125;, delay)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//website.cwzcfj.cn/" target="_blank">小橙</a>
+            
         </div>
-    </article>
- 
+        <div>
+            
+        </div>
+    </div>
+</article>
 
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/04/20/IntersectionObserver介绍/" class="pre-post btn btn-default" title="IntersectionObserver介绍">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">IntersectionObserver介绍</span>
+        </a>
+    
+    
+        <a href="/2019/04/20/markdown简单使用/" class="next-post btn btn-default" title="markdown简单使用">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">markdown简单使用</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
 
 
 
@@ -313,8 +344,6 @@
     </div>
 </div>
 
-
-	<script src="/js/search.js?rev=@@hash"></script>
 
 
 

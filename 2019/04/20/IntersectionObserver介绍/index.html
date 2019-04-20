@@ -16,10 +16,10 @@
     <link rel="dns-prefetch" href="//website.cwzcfj.cn">
     <!--SEO-->
 
-    <meta name="keywords" content="前端， 后端，javascript, node">
+    <meta name="keywords" content="工具,IntersectionObserver">
 
 
-    <meta name="description" content="个人博客网站">
+    <meta name="description" content="IntersectionObserver简介在移动端，有个很重要的概念，叫做懒加载，适用于一些图片资源特别多，ajax数据特别多的页面中，经常会有动态加载数据的场景中，这个时候，我们通常是使用监...">
 
 
 
@@ -31,7 +31,7 @@
     <!--Title-->
 
 
-<title>标签: js | 小橙</title>
+<title>IntersectionObserver介绍 | 小橙</title>
 
 
     <link rel="alternate" href="/atom.xml" title="小橙" type="application/atom+xml">
@@ -122,53 +122,110 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content ">
-                    <ol class="breadcrumb">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="IntersectionObserver介绍">
+            
+	            IntersectionObserver介绍
+            
+        </h1>
+        <div class="post-meta">
     
-    
-        <li>
-            js
-        </li>
-    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/工具/">工具</a>
+        </span>
     
 
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/IntersectionObserver/">IntersectionObserver</a> <a class="tag-link" href="/tags/工具/">工具</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/04/20</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="IntersectionObserver简介"><a href="#IntersectionObserver简介" class="headerlink" title="IntersectionObserver简介"></a>IntersectionObserver简介</h2><p>在移动端，有个很重要的概念，叫做懒加载，适用于一些图片资源特别多，ajax数据特别多的页面中，经常会有动态加载数据的场景中，这个时候，我们通常是使用监听scroll或者使用setInterval来判断，元素是否进入视图，其中scroll由于其特别大的计算量，会有性能问题，而setInterval由于其有间歇期，也会出现体验问题。<br>浏览器的开发商，估计也发现了这个问题，所以在2016年初，chrome51率先提供了一个新的API，就是IntersectionObserver，它可以用来监听元素是否进入了设备的可视区域之内，而不需要频繁的计算来做这个判断。</p>
+<p>毕竟是一个新兴的API，所以浏览器的支持性并不好，这里可以看看当前浏览器对于IntersectionObserver的支持性：<a href="http://caniuse.com/#search=IntersectionObserver" target="_blank" rel="noopener">IntersectionObserver</a></p>
+<ol>
+<li>Api简介<br>该API的调用非常简单：<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> observer = <span class="keyword">new</span> <span class="type">IntersectionObserver</span>(callback,options);</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
+<p>IntersectionObserver支持两个参数：</p>
+<ul>
+<li>callback是当被监听元素的可见性变化时，触发的回调函数</li>
+<li>options是一个配置参数，可选，有默认的属性值</li>
+</ul>
+<ol start="2">
+<li>应用</li>
+</ol>
+<ul>
+<li>预加载（滚动加载，无限加载）</li>
+<li>懒加载（图片后加载）</li>
+<li>TAB滚动跟随</li>
+</ul>
+<ol start="3">
+<li>事件DOMContentLoaded和load的区别<br>区别是: 触发的时机不一样，先触发DOMContentLoaded事件，后触发load事件。</li>
+</ol>
+<p>DOM文档加载的步骤为</p>
+<ol>
+<li>解析HTML结构。</li>
+<li>DOM树构建完成。//DOMContentLoaded</li>
+<li>加载外部脚本和样式表文件。</li>
+<li>解析并执行脚本代码。</li>
+<li>加载图片等外部文件。</li>
+<li>页面加载完毕。//load<br>在第2步，会触发DOMContentLoaded事件。在第6步，触发load事件。</li>
+</ol>
+<p>js原生写法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不兼容老的浏览器，兼容写法见[jQuery中ready与load事件](http://www.imooc.com/code/3253)，或用jQuery</span></span><br><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">"DOMContentLoaded"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="comment">// ...代码...</span></span><br><span class="line">&#125;, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"load"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// ...代码...</span></span><br><span class="line">&#125;, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure></p>
+<p>jQuery写法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// DOMContentLoaded</span></span><br><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// ...代码...</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//load</span></span><br><span class="line">$(<span class="built_in">document</span>).load(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// ...代码...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 
-
-    <article class="post">
-        
-            <div class="post-media">
-                <a href="/2019/04/15/js正则表达式/">
-                    <img class="img-ajax" src="/img/loading.gif" data-src="http://i2.bvimg.com/683865/4cc9747c79574865s.jpg" alt="javaScript 正则表达式">
-                </a>
-            </div>
-        
-        <div class="post-content">
-            <div class="post-head home-post-head">
-                <h1 class="post-title">
-                    <a href="/2019/04/15/js正则表达式/">javaScript 正则表达式</a>
-                </h1>
-                <div class="post-meta">  &bull;
-                    <time class="post-date" datetime title>
-                        2019年04月15日
-                    </time>
-                </div>
-            </div>
-            <p class="brief">
-                
-                    正则表达式规则
-普通字符
- 字母、数字、汉子、下划线、以及没有特殊定义的标点符号，都是普通字符。
-
-简单转义字符
-  采用前面加”/“的方法进行。
-12345678910111213\r, \n  代表回车和换行符	\t      制...
-                
-            </p>
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="//website.cwzcfj.cn/" target="_blank">小橙</a>
+            
         </div>
-    </article>
- 
+        <div>
+            
+        </div>
+    </div>
+</article>
 
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2019/04/20/debounce弹跳函数介绍/" class="next-post btn btn-default" title="debounce弹跳函数介绍">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">debounce弹跳函数介绍</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
 
 
 
@@ -313,8 +370,6 @@
     </div>
 </div>
 
-
-	<script src="/js/search.js?rev=@@hash"></script>
 
 
 

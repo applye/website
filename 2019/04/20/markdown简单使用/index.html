@@ -16,10 +16,10 @@
     <link rel="dns-prefetch" href="//website.cwzcfj.cn">
     <!--SEO-->
 
-    <meta name="keywords" content="前端,react-native,AsyncStorage">
+    <meta name="keywords" content="工具,markdown">
 
 
-    <meta name="description" content="React Native APi AsyncStorage的使用。简介  AsyncStorage是一个简单的、异步、持久的key-value存储系统，它对于App来说是全局的。用来替换Loca...">
+    <meta name="description" content="markdown简介Markdown 的目标是实现「易读易写」。Markdown 的特点就是，让写作变得更简单，我们不用再考虑如何排版，我们只要专心于写作就好了，这也是对我们的宗旨！！可读性，无...">
 
 
 
@@ -31,7 +31,7 @@
     <!--Title-->
 
 
-<title>React Native APi AsyncStorage的使用 | 小橙</title>
+<title>markdown简单使用 | 小橙</title>
 
 
     <link rel="alternate" href="/atom.xml" title="小橙" type="application/atom+xml">
@@ -126,16 +126,16 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="React Native APi AsyncStorage的使用">
+        <h1 id="markdown简单使用">
             
-	            React Native APi AsyncStorage的使用
+	            markdown简单使用
             
         </h1>
         <div class="post-meta">
     
         <span class="categories-meta fa-wrap">
             <i class="fa fa-folder-open-o"></i>
-            <a class="category-link" href="/categories/前端/">前端</a>
+            <a class="category-link" href="/categories/工具/">工具</a>
         </span>
     
 
@@ -144,7 +144,7 @@
             <i class="fa fa-tags"></i>
             <span class="tags-meta">
                 
-                    <a class="tag-link" href="/tags/AsyncStorage/">AsyncStorage</a> <a class="tag-link" href="/tags/react-native/">react-native</a> <a class="tag-link" href="/tags/前端/">前端</a>
+                    <a class="tag-link" href="/tags/markdown/">markdown</a> <a class="tag-link" href="/tags/工具/">工具</a>
                 
             </span>
         </span>
@@ -154,7 +154,7 @@
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2019/04/15</span>
+            <span class="date-meta">2019/04/20</span>
         </span>
         
             <span class="fa-wrap">
@@ -169,10 +169,95 @@
     </div>
     
     <div class="post-body post-content">
-        <h2 id="React-Native-APi-AsyncStorage的使用。"><a href="#React-Native-APi-AsyncStorage的使用。" class="headerlink" title="React Native APi AsyncStorage的使用。"></a>React Native APi AsyncStorage的使用。</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>  AsyncStorage是一个简单的、异步、持久的key-value存储系统，它对于App来说是全局的。用来替换LocalStorage。推荐您使用AsyncStorage基础上做一层抽象的封装，而不是直接使用。</p>
-<p>  地址：<a href="https://github.com/sunnylqm/react-native-storage" target="_blank">https://github.com/sunnylqm/react-native-storage</a></p>
-<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>  AsyncStorage里面都有一个回调，而回调第一个参数都是错误对象，如果发生错误，就返回该对象的错误信息，否则为null。每个方法都返回一个promise对象。<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> getItem(<span class="string">key:</span>string , <span class="string">callback:</span>(error,result)): 根据键来获取值，获取的结果会在回调函数中。</span><br><span class="line"><span class="keyword">static</span> setItem(<span class="string">key:</span>string , <span class="string">value:</span>string , <span class="string">callback:</span>(error)): 设置键值对。</span><br><span class="line"><span class="keyword">static</span> removeItem(<span class="string">key:</span>string , <span class="string">callback:</span>(error)): 将根据键移出一项</span><br><span class="line"><span class="keyword">static</span> <span class="string">mergeItem:</span>(<span class="string">key:</span>string , <span class="string">value:</span>string , <span class="string">callback:</span>(error)): 合并现有的值和输入值。</span><br><span class="line"><span class="keyword">static</span> clear(<span class="string">callback:</span>(error)): 清除所有的项目。</span><br><span class="line"><span class="keyword">static</span> getAllKeys(<span class="string">callback:</span>(error)): 获取所有的键。</span><br><span class="line"><span class="keyword">static</span> multiGet(keys,<span class="string">callback:</span>(errors,result)):获取多项，其中keys是字符串数组。</span><br><span class="line"><span class="keyword">static</span> multiSet(keyValuePairs,<span class="string">callback:</span>(errors)):设置多项，其中keyValuePairs是字符串的二维数组。</span><br><span class="line"><span class="keyword">static</span> multiRemove(keys,callback(errors)):删除多项，其中keys是字符串数组。</span><br><span class="line"><span class="keyword">static</span> multiMerge(keyValuePairs,<span class="string">callback:</span>(errors)):多个键值合并，其中keyValuePairs是字符串中的二维数组。</span><br></pre></td></tr></table></figure></p>
-
+        <h3 id="markdown简介"><a href="#markdown简介" class="headerlink" title="markdown简介"></a>markdown简介</h3><p>Markdown 的目标是实现「易读易写」。<br>Markdown 的特点就是，让写作变得更简单，我们不用再考虑如何排版，我们只要专心于写作就好了，这也是对我们的宗旨！！<br>可读性，无论如何，都是最重要的。一份使用 Markdown 格式撰写的文件应该可以直接以纯文本发布，并且看起来不会像是由许多标签或是格式指令所构成。</p>
+<p>markdown命令：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>标题</span><br><span class="line"><span class="code">    # 一级标题</span></span><br><span class="line"><span class="code">    ## 二级标题</span></span><br><span class="line"><span class="code">    ### 三级标题</span></span><br><span class="line"><span class="code">    #### 四级标题</span></span><br><span class="line"><span class="code">    ##### 五级标题</span></span><br><span class="line"><span class="code">    ###### 六级标题</span></span><br><span class="line"></span><br><span class="line">![<span class="string">百度图片</span>](<span class="link">https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3534940874,3350191940&amp;fm=27&amp;gp=0.jpg， '图片'</span>)</span><br><span class="line"></span><br><span class="line">[<span class="string">百度</span>](<span class="link">http://baidu.com</span>)</span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://baidu.com"</span> <span class="attr">taget</span>=<span class="string">"_blank"</span>&gt;</span></span>百度链接地址<span class="xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="emphasis">*在哪里*</span></span><br><span class="line"></span><br><span class="line"><span class="strong">**加粗**</span></span><br><span class="line"></span><br><span class="line"><span class="strong">***斜体加粗**</span>*</span><br><span class="line"></span><br><span class="line">~~删除线~~</span><br><span class="line"></span><br><span class="line">&gt;这是引用的内容</span><br><span class="line"></span><br><span class="line">&gt;&gt;这是引用的内容2</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">----</span><br><span class="line"></span><br><span class="line"><span class="emphasis">***</span></span><br><span class="line"></span><br><span class="line"><span class="emphasis">***</span>*</span><br><span class="line"></span><br><span class="line">表头|表头</span><br><span class="line">--|--</span><br><span class="line">内容|内容</span><br><span class="line"></span><br><span class="line"><span class="bullet">* </span>在什么地方</span><br><span class="line"><span class="bullet">* </span>在干啥</span><br><span class="line"><span class="bullet">+ </span>明天做什么</span><br><span class="line"><span class="bullet">+ </span>副书记看风景</span><br><span class="line"><span class="bullet">- </span>开发驾考速度</span><br><span class="line"><span class="bullet">- </span>空间都是咖啡</span><br><span class="line"></span><br><span class="line"><span class="bullet">1. </span>电视剧法开始</span><br><span class="line"><span class="bullet">2. </span>的框架开发商的</span><br><span class="line"><span class="bullet">3. </span>插卡看的积分</span><br><span class="line"></span><br><span class="line"><span class="bullet">* </span>1级无序列表</span><br><span class="line"><span class="code">    * 在什么地方</span></span><br><span class="line"><span class="code">    * 世界都是看得见</span></span><br><span class="line"><span class="code">    * 大家福建省客服</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">- </span>1级无序列表</span><br><span class="line"><span class="code">    1. 的框架侃大山</span></span><br><span class="line"><span class="code">    2. 附近富士康福建省</span></span><br><span class="line"><span class="code">    3. 发呆思考当升科技</span></span><br><span class="line"></span><br><span class="line">表头|表头|表头</span><br><span class="line">--|:--:|--:</span><br><span class="line">内容|内容|内容</span><br></pre></td></tr></table></figure></p>
+<p>预览：</p>
+<ol>
+<li>标题<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6></li>
+</ol>
+<p><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3534940874,3350191940&amp;fm=27&amp;gp=0.jpg，" alt="百度图片" title="图片"></p>
+<p><a href="http://baidu.com" target="_blank" rel="noopener">百度</a></p>
+<p><a href="http://baidu.com" taget="_blank" target="_blank" rel="noopener">百度链接地址</a></p>
+<p><em>在哪里</em></p>
+<p><strong>加粗</strong></p>
+<p><strong><em>斜体加粗</em></strong></p>
+<p><del>删除线</del></p>
+<blockquote>
+<p>这是引用的内容</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>这是引用的内容2</p>
+</blockquote>
+</blockquote>
+<hr>
+<hr>
+<hr>
+<hr>
+<table>
+<thead>
+<tr>
+<th>表头</th>
+<th>表头</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>内容</td>
+<td>内容</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>在什么地方</li>
+<li>在干啥</li>
+</ul>
+<ul>
+<li>明天做什么</li>
+<li>副书记看风景</li>
+</ul>
+<ul>
+<li>开发驾考速度</li>
+<li>空间都是咖啡</li>
+</ul>
+<ol>
+<li>电视剧法开始</li>
+<li>的框架开发商的</li>
+<li>插卡看的积分</li>
+</ol>
+<ul>
+<li>1级无序列表<ul>
+<li>在什么地方</li>
+<li>世界都是看得见</li>
+<li>大家福建省客服</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>1级无序列表<ol>
+<li>的框架侃大山</li>
+<li>附近富士康福建省</li>
+<li>发呆思考当升科技</li>
+</ol>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>表头</th>
+<th style="text-align:center">表头</th>
+<th style="text-align:right">表头</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>内容</td>
+<td style="text-align:center">内容</td>
+<td style="text-align:right">内容</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> db</span><br></pre></td></tr></table></figure>
     </div>
     
     <div class="post-footer">
@@ -189,25 +274,19 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2019/04/15/javascript/" class="pre-post btn btn-default" title="javaScript基础知识">
+        <a href="/2019/04/20/debounce弹跳函数介绍/" class="pre-post btn btn-default" title="debounce弹跳函数介绍">
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">javaScript基础知识</span>
+            <span class="hidden-xs">debounce弹跳函数介绍</span>
         </a>
     
     
-        <a href="/2019/04/15/tab导航组件/" class="next-post btn btn-default" title="React-native之开源Tab导航组件">
+        <a href="/2019/04/19/docker学习/" class="next-post btn btn-default" title="docker学习">
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">React-native之开源Tab导航组件</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">docker学习</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
 
-
-    <div id="comments">
-        
-   <p>评论系统未开启，无法评论！</p>
-
-    </div>
 
 
 
