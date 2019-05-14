@@ -40,7 +40,7 @@ license： 你的这个包遵循什么开源协议，直接回车就行
 * npm源切换
 注意一般因为网络速度，原因一般使用taobao镜像，发布时需要切换会官网镜像
 ```
- npm config set registry http://www.npmjs.org
+npm config set registry http://registry.npmjs.org/
  ```
 * npm登录
 ```
