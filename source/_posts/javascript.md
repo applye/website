@@ -8,8 +8,9 @@ tags:
   - 'ES6'
   - 'js面向对象'
   - '闭包'
+comments: false
 date: 2019-04-15 22:26:20
-img: 'http://i1.bvimg.com/683865/4760d60593e9f5c3s.jpg'
+img: 'https://image.sitapix.com/index-thumb/art-board-cooking-350417-via-sitapix-com.jpeg'
 ---
 ## js基础知识点
 > js面向对象

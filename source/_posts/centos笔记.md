@@ -6,8 +6,9 @@ tags:
   - '工具'
   - 'centos7'
   - '环境搭建'
+comments: false
 date: 2019-04-15 23:37:40
-img: 'http://i1.bvimg.com/683865/7eb84b5c3798733es.jpg'
+img: 'https://image.sitapix.com/index-thumb/sitapix-photo-4388473-via-sitapix-com.jpeg'
 ---
 ## Centos使用笔记
 

@@ -6,8 +6,9 @@ tags:
   - '前端'
   - '正则'
   - 'js'
+comments: false
 date: 2019-04-15 23:57:20
-img: 'http://i2.bvimg.com/683865/4cc9747c79574865s.jpg'
+img: 'https://image.sitapix.com/index-thumb/sitapix-photo-4417764-via-sitapix-com.jpeg'
 ---
 
 ### 正则表达式规则

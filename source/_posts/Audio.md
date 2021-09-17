@@ -6,8 +6,9 @@ tags:
   - '前端'
   - 'h5'
   - 'audio'
+comments: false
 date: 2019-04-15 23:47:20
-img: 'http://i1.bvimg.com/683865/16488f602e11a525s.jpg'
+img: 'https://image.sitapix.com/index-thumb/sitapix-photo-305084-via-sitapix-com.jpeg'
 ---
 
 ## Audio 对象介绍

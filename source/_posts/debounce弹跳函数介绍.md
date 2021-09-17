@@ -7,7 +7,7 @@ tags:
 comments: false
 abbrlink: 32778
 date: 2019-04-20 21:19:48
-img: 'http://i2.bvimg.com/683865/5f2e8664e363d0eds.jpg'
+img: 'https://image.sitapix.com/index-thumb/apple-apple-watch-2-black-437037-via-sitapix-com.jpeg'
 ---
 ## debounce去弹跳函数 原lodash.debounce
 debounce 强制函数再某段时间内只执行一次

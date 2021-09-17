@@ -3,7 +3,8 @@ abbrlink: 2
 title: React Native 第三方组件react-native-side-menu -侧滑栏使用
 categories: 前端
 tags: ['React Native','前端']
-img: 'http://i2.bvimg.com/683865/2fa6daea1f673c60s.jpg'
+comments: false
+img: 'https://image.sitapix.com/index-thumb/sitapix-photo-4425159-via-sitapix-com.jpeg'
 ---
 ## React Native 第三方组件react-native-side-menu -侧滑栏使用
 ### 简介

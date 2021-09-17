@@ -5,8 +5,9 @@ categories: '工具'
 tags:
   - '工具'
   - 'curl'
+comments: false
 date: 2019-04-15 23:31:23
-img: 'http://i1.bvimg.com/683865/b38ead004e1972eas.jpg'
+img: 'https://image.sitapix.com/index-thumb/sitapix-photo-4400414-via-sitapix-com.jpeg'
 ---
 ## curl使用常用命令
 ```

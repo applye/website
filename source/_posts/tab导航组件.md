@@ -5,8 +5,9 @@ categories: '前端'
 tags:
   - '前端'
   - 'react-native'
+comments: false
 date: 2019-04-15 22:12:38
-img: 'http://i1.bvimg.com/683865/d838e138d8b7bf60s.jpg'
+img: 'https://image.sitapix.com/index-thumb/sitapix-photo-270283-via-sitapix-com.jpeg'
 ---
 ## React-native之开源Tab导航组件	
 

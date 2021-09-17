@@ -5,9 +5,10 @@ categories: '前端'
 tags:
   - '前端'
   - 'react-native'
-	- 'AsyncStorage'
+  - 'AsyncStorage'
+comments: false
 date: 2019-04-15 22:18:34
-img: 'http://i1.bvimg.com/683865/9bfbc148e42886a0s.jpg'
+img: 'https://image.sitapix.com/index-thumb/sitapix-photo-2971692-via-sitapix-com.jpeg'
 ---
 ## React Native APi AsyncStorage的使用。
 ### 简介

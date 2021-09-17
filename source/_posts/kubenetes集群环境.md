@@ -8,7 +8,7 @@ tags:
 comments: false
 abbrlink: 50923
 date: 2019-04-17 21:59:27
-img: http://i1.bvimg.com/683865/219a7e8062990491s.png
+img: 'https://image.sitapix.com/index-thumb/abstract-business-code-270348-via-sitapix-com.jpeg'
 ---
 
 ## Minikube 安装

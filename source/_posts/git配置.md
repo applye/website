@@ -5,8 +5,9 @@ categories: '工具'
 tags:
   - '工具'
   - 'git'
+comments: false
 date: 2019-04-15 23:28:34
-img: 'http://i2.bvimg.com/683865/ffae4946cf4b133cs.jpg'
+img: 'https://image.sitapix.com/index-thumb/android-browser-business-1482061-via-sitapix-com.jpeg'
 ---
 
 > 1. TortoiseGit 远程上传push代码，配置不用每次输入用户名和密码方法
