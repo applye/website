@@ -1,0 +1,328 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="小橙">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="//website.cwzcfj.cn">
+    <!--SEO-->
+
+<meta name="keywords" content="前端,npm">
+
+
+<meta name="description" content="前端npm包发布
+在npm官网上注册一个账号，https://www.npmjs.com/. 之后别忘了验证邮箱。
+
+新建一个目录，比如all-web, 使用命令进入到这个目录，执行npm in...">
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+<title>
+    
+    前端如何进行npm发布？ |
+    
+    小橙
+</title>
+
+<link rel="alternate" href="/atom.xml" title="小橙" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+</head></html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    
+<header class="main-header" style="background-image:url(
+    https://image.sitapix.com/index-thumb/sitapix-photo-4380884-via-sitapix-com.jpeg@!w1920)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="xiao cheng">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                 
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="//website.cwzcfj.cn">
+                        小橙</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                首页</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/前端/"><i class="fa "></i>
+                                前端</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/工具/"><i class="fa "></i>
+                                工具</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="前端如何进行npm发布？">
+            
+                    前端如何进行npm发布？
+                        
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/前端/">前端</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-link" href="/tags/npm/">npm</a> <a class="tag-link" href="/tags/前端/">前端</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2019/05/14</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+            
+                
+    </div>
+    
+        <div class="post-body post-content">
+            <h3 id="前端npm包发布"><a href="#前端npm包发布" class="headerlink" title="前端npm包发布"></a>前端npm包发布</h3><ol>
+<li><p>在npm官网上注册一个账号，<a href="https://www.npmjs.com/" target="_blank" rel="noopener">https://www.npmjs.com/</a>. 之后别忘了验证邮箱。</p>
+</li>
+<li><p>新建一个目录，比如all-web, 使用命令进入到这个目录，执行npm init, 初始化，按照提示填写对应的内容信息。</p>
+<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">package name：填写你这个包的名字，默认是你这个文件夹的名字（nodeadd）</span><br><span class="line"></span><br><span class="line">version：填写你这个包的版本，默认1.0.0</span><br><span class="line"></span><br><span class="line">description：描述一下你这个包是干嘛用的</span><br><span class="line"></span><br><span class="line">entry point：入口文件，默认是index.js，你也可以自己填写你自己的文件名</span><br><span class="line"></span><br><span class="line"><span class="keyword">test </span>command：测试命令，默认为空，直接回车就行</span><br><span class="line"></span><br><span class="line">git repository：git仓库地址，如果你的包是先放到github上或者其他git仓库里，这时候你的文件夹里面会存在一个隐藏的.git目录，npm会读到这个目录作为这一项的默认值。如果没有的话，直接回车继续。</span><br><span class="line"></span><br><span class="line">keywords：关键词，方便别人搜到这个包</span><br><span class="line"></span><br><span class="line">author：你的账号</span><br><span class="line"></span><br><span class="line">license： 你的这个包遵循什么开源协议，直接回车就行</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编写自己的项目包，可以是脚手架等</p>
+</li>
+<li><p>发布npm包</p>
+</li>
+</ol>
+<ul>
+<li><p>npm源切换<br>注意一般因为网络速度，原因一般使用taobao镜像，发布时需要切换会官网镜像</p>
+<figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="keyword">set</span> <span class="keyword">registry</span> <span class="keyword">http</span>://<span class="keyword">registry</span>.npmjs.org/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>npm登录</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> adduser     <span class="comment"># 添加账号</span></span><br><span class="line"><span class="built_in">npm</span> login       <span class="comment"># 登录账号</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>接下来会以问答形式向你了解你的用户名、密码以及公开的邮箱，之后输入：<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> publish</span><br></pre></td></tr></table></figure></p>
+<p>看到进度条，之后发布成功。</p>
+<ol start="5">
+<li><p>查询发布的包<br>npm官网全局搜索即可，淘宝npm等镜像同步时间到搜索.</p>
+</li>
+<li><p>如何撤销发布的包(撤包有时间限制，24小时)<br>终端执行 npm unpublish<br>例如：<br>(1). npm unpublish <a href="mailto:all-web@1.0.0" target="_blank" rel="noopener">all-web@1.0.0</a> 删除某个版本<br>(2). npm unpublish all-web –force 删除整个npm市场的包</p>
+</li>
+</ol>
+<p>npm unpublish的推荐替代命令：npm deprecate <pkg>[@<version>] <message><br>使用这个命令，并不会在社区里撤销你已有的包，但会在任何人尝试安装这个包的时候得到警告<br>例如：npm deprecate z-tool ‘这个包我已经不再维护了哟～’</message></version></pkg></p>
+<p>【注意】如果报权限方面的错，加上–force</p>
+
+        </div>
+        
+                    <div class="post-footer">
+                        <div>
+                            
+                                转载声明：
+                                    商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="https://github.com/879733672" target="_blank">小橙</a>
+                                        
+                                            
+                        </div>
+                        <div>
+                            
+                        </div>
+                    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2021/08/27/side侧滑栏组件/" class="pre-post btn btn-default" title="React Native 第三方组件react-native-side-menu -侧滑栏使用">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">
+                React Native 第三方组件react-native-side-menu -侧滑栏使用
+            </span>
+        </a>
+        
+            
+                <a href="/2019/05/07/前端脚手架搭建/" class="next-post btn btn-default" title="前端脚手架搭建">
+                    <span class="hidden-lg">下一篇</span>
+                    <span class="hidden-xs">
+                        前端脚手架搭建
+                    </span><i class="fa fa-angle-right fa-fw"></i>
+                </a>
+                
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前端npm包发布"><span class="toc-text">前端npm包发布</span></a></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+    访问量:
+    <strong id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    &nbsp; | &nbsp;
+    访客数:
+    <strong id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2019
+                    
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/assets/tagcanvas.min.js?rev=2.9"></script>
+<script>
+var tagOption = {
+    textColour: '#444', // 字体颜色
+    outlineMethod: 'block', // 选中模式
+    outlineColour: '#FFDAB9', // 选中模式的颜色
+    interval: 30 || 30, // 动画帧之间的时间间隔，值越大，转动幅度越大
+    textHeight: 13,
+    outlineRadius: 3,
+    freezeActive: true || '', // 选中的标签是否继续滚动
+    frontSelect: true || '', // 不选标签云后部的标签
+    initial: [0.1, -0.1],
+    depth: 0.5,
+    decel: 0.95,
+    maxSpeed: 0.03,
+    reverse: true || '', // 是否反向触发
+    fadeIn: 500, // 进入动画时间
+    wheelZoom: false || '' // 是否启用鼠标滚轮
+}
+TagCanvas.Start('tag-cloud-3d', '', tagOption);
+</script>
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="/js/app.js?rev=@@hash"></script>
+</body>
+</html>

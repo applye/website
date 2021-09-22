@@ -1,0 +1,354 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="小橙">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="//website.cwzcfj.cn">
+    <!--SEO-->
+
+<meta name="keywords" content="前端,脚手架">
+
+
+<meta name="description" content="前端脚手架搭建在实际开发过程中，从零开始建立项目的结构是一件让人头疼的事情，所以各种各样的脚手架工具运用而生。使用较多的yoeman,express-generato,create-react-...">
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+<title>
+    
+    前端脚手架搭建 |
+    
+    小橙
+</title>
+
+<link rel="alternate" href="/atom.xml" title="小橙" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+</head></html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    
+<header class="main-header" style="background-image:url(
+    https://image.sitapix.com/index-thumb/sitapix-photo-4374743-via-sitapix-com.jpeg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="xiao cheng">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                 
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="//website.cwzcfj.cn">
+                        小橙</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                首页</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/前端/"><i class="fa "></i>
+                                前端</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/工具/"><i class="fa "></i>
+                                工具</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="前端脚手架搭建">
+            
+                    前端脚手架搭建
+                        
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/前端/">前端</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-link" href="/tags/前端/">前端</a> <a class="tag-link" href="/tags/脚手架/">脚手架</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2019/05/07</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+            
+                
+    </div>
+    
+        <div class="post-body post-content">
+            <h3 id="前端脚手架搭建"><a href="#前端脚手架搭建" class="headerlink" title="前端脚手架搭建"></a>前端脚手架搭建</h3><p>在实际开发过程中，从零开始建立项目的结构是一件让人头疼的事情，所以各种各样的脚手架工具运用而生。使用较多的yoeman,express-generato,create-react-appr和vue-cli便是当中之一。它们功能丰富，但最核心的功能都是能够快速搭建一个完整的项目结构，开发者只需要在生成的项目结构基础上进行开发即可，非常简单高效。</p>
+<ol>
+<li>为什么需要需要脚手架？</li>
+</ol>
+<ul>
+<li>减少重复性的工作，不再需要复制其他项目再删除无关代码，或者从零创建一个项目和文件</li>
+<li>根据交互动态生成项目结构和配置文件等。</li>
+</ul>
+<p>我们可以借鉴 vue-cli 的基本思路。vue-cli 是将项目模板放在 git 上，运行的时候再根据用户交互下载不同的模板，经过模板引擎渲染出来，生成项目。这样将模板和脚手架分离，就可以各自维护，即使模板有变动，只需要上传最新的模板即可，而不需要用户去更新脚手架就可以生成最新的项目。那么就可以按照这个思路来进行开发了。</p>
+<ol start="2">
+<li>第三方库</li>
+</ol>
+<ul>
+<li>commander.js，可以自动的解析命令和参数，用于处理用户输入的命令。</li>
+<li>download-git-repo，下载并提取 git 仓库，用于下载项目模板。</li>
+<li>Inquirer.js，通用的命令行用户界面集合，用于和用户进行交互。</li>
+<li>handlebars.js，模板引擎，将用户提交的信息动态填充到文件中。</li>
+<li>ora，下载过程久的话，可以用于显示下载中的动画效果。</li>
+<li>chalk，可以给终端的字体加上颜色。</li>
+<li>log-symbols，可以在终端上显示出 √ 或 × 等的图标。</li>
+</ul>
+<ol start="3">
+<li>初始化项目<br>首先创建一个空项目，暂时命名为 all-cli，然后新建一个 cli.js 文件，再执行 npm init 生成一个 package.json 文件。最后安装上面需要用到的依赖。</li>
+</ol>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">mkdir</span> all-<span class="keyword">cli</span> &amp;&amp; <span class="keyword">cd</span> all-<span class="keyword">cli</span></span><br><span class="line"></span><br><span class="line">npm init</span><br><span class="line"></span><br><span class="line">npm install commander download-git-repo inquirer handlebars ora chalk <span class="keyword">log</span>-symbols -<span class="built_in">S</span></span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>处理命令行<br>node.js 内置了对命令行操作的支持，在 package.json 中的 bin 字段可以定义命令名和关联的执行文件。<br>所以现在 package.json 中加上 bin 的内容：<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"all-cli"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">  <span class="attr">"description"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="attr">"main"</span>: <span class="string">"index.js"</span>,</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"test"</span>: <span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"bin"</span>: &#123;</span><br><span class="line">    <span class="attr">"all-cli"</span>: <span class="string">"bin/cli.js"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"author"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="attr">"license"</span>: <span class="string">"ISC"</span>,</span><br><span class="line">  <span class="attr">"dependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"chalk"</span>: <span class="string">"^2.4.2"</span>,</span><br><span class="line">    <span class="attr">"commander"</span>: <span class="string">"^2.20.0"</span>,</span><br><span class="line">    <span class="attr">"download-git-repo"</span>: <span class="string">"^1.1.0"</span>,</span><br><span class="line">    <span class="attr">"handlebars"</span>: <span class="string">"^4.1.2"</span>,</span><br><span class="line">    <span class="attr">"inquirer"</span>: <span class="string">"^6.3.1"</span>,</span><br><span class="line">    <span class="attr">"log-symbols"</span>: <span class="string">"^3.0.0"</span>,</span><br><span class="line">    <span class="attr">"ora"</span>: <span class="string">"^3.4.0"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>然后在cli.js中定义init命令：<br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#<span class="comment">!/usr/bin/env node</span></span><br><span class="line">const <span class="function"><span class="keyword">program</span></span> = require(<span class="string">'commander'</span>);</span><br><span class="line"><span class="function"><span class="keyword">program</span>.<span class="title">version</span><span class="params">('1.0.0', '-v, --version')</span></span></span><br><span class="line">    .command(<span class="string">'init &lt;name&gt;'</span>)</span><br><span class="line">    .<span class="keyword">action</span>((<span class="keyword">name</span>) =&gt; &#123;</span><br><span class="line">        console.<span class="built_in">log</span>(<span class="keyword">name</span>);</span><br><span class="line">    &#125;);</span><br><span class="line"><span class="function"><span class="keyword">program</span>.<span class="title">parse</span><span class="params">(process.argv)</span></span>;</span><br></pre></td></tr></table></figure></p>
+<p>调用 version(‘1.0.0’, ‘-v, –version’) 会将 -v 和 –version 添加到命令中，可以通过这些选项打印出版本号。<br>调用 command(‘init <name>‘) 定义 init 命令，name 则是必传的参数，为项目名。<br>action() 则是执行 init 命令会发生的行为，要生成项目的过程就是在这里面执行的，这里暂时只打印出 name。<br>这里已经可以执行 init 命令了。执行：<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">node</span> <span class="title">bin</span>/cli.js init HelloWorld</span><br></pre></td></tr></table></figure></name></p>
+<p>可以看到命令行工具也打印出了 HelloWorld，那么很清楚， action((name) =&gt; {}) 这里的参数 name，就是我们执行 init 命令时输入的项目名称。<br>命令已经完成，接下来就要下载模板生成项目结构了。</p>
+<ol start="5">
+<li><p>下载模板<br>download-git-repo 支持从 Github、Gitlab 和 Bitbucket 下载仓库，各自的具体用法可以参考官方文档。</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env node</span></span><br><span class="line">const program = <span class="built_in">require</span>(<span class="string">'commander'</span>);</span><br><span class="line">const download = <span class="built_in">require</span>(<span class="string">'download-git-repo'</span>);</span><br><span class="line">program.version(<span class="string">'1.0.0'</span>, <span class="string">'-v, --version'</span>)</span><br><span class="line">       .command(<span class="string">'init &lt;name&gt;'</span>)</span><br><span class="line">       .action(<span class="function"><span class="params">(name)</span> =&gt;</span> &#123;</span><br><span class="line">           download(<span class="string">'gitlab:xx#master'</span>, name, &#123;clone: <span class="literal">true</span>&#125;, <span class="function"><span class="params">(err)</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(err ? <span class="string">'Error'</span> : <span class="string">'Success'</span>)</span><br><span class="line">           &#125;)</span><br><span class="line">       &#125;);</span><br><span class="line">program.parse(process.argv);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>命令行交互<br>命令行交互功能可以在用户执行 init 命令后，向用户提出问题，接收用户的输入并作出相应的处理。这里使用 inquirer.js 来实现。</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const inquirer = <span class="built_in">require</span>(<span class="string">'inquirer'</span>);</span><br><span class="line">inquirer.prompt([</span><br><span class="line">    &#123;</span><br><span class="line">        type: <span class="string">'input'</span>,</span><br><span class="line">        name: <span class="string">'author'</span>,</span><br><span class="line">        message: <span class="string">'author'</span></span><br><span class="line">    &#125;</span><br><span class="line">]).<span class="keyword">then</span>(<span class="function"><span class="params">(answers)</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(answers.author);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>通过这里例子可以看出，问题就放在 prompt() 中，问题的类型为 input 就是输入类型，name 就是作为答案对象中的 key，message 就是问题了，用户输入的答案就在 answers 中，使用起来就是这么简单。更多的参数设置可以参考官方文档。<br>通过命令行交互，获得用户的输入，从而可以把答案渲染到模板中。</p>
+<ol start="7">
+<li>渲染模板<br>这里用 handlebars 的语法对仓库的模板中的 package.json 文件做一些修改<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"&#123;&#123;name&#125;&#125;"</span>,</span><br><span class="line">  <span class="attr">"author"</span>: <span class="string">"&#123;&#123;author&#125;&#125;"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"&#123;&#123;version&#125;&#125;"</span>,</span><br><span class="line">  <span class="attr">"description"</span>: <span class="string">"&#123;&#123;description&#125;&#125;"</span>,</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"test"</span>: <span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"license"</span>: <span class="string">"ISC"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>并在下载模板完成之后将用户输入的答案渲染到 package.json 中<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">program.version(<span class="string">'1.0.0'</span>, <span class="string">'-v, --version'</span>)</span><br><span class="line">.command(<span class="string">'init &lt;name&gt;'</span>)</span><br><span class="line">.action(<span class="function">(<span class="params">name</span>) =&gt;</span> &#123;</span><br><span class="line">    inquirer.prompt([</span><br><span class="line">    &#123;</span><br><span class="line">        name: <span class="string">'description'</span>,</span><br><span class="line">        message: <span class="string">'description'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        name: <span class="string">'author'</span>,</span><br><span class="line">        message: <span class="string">'author'</span></span><br><span class="line">    &#125;</span><br><span class="line">    ]).then(<span class="function">(<span class="params">answers</span>) =&gt;</span> &#123;</span><br><span class="line">        download(<span class="string">'gitlab:xxxx#master'</span>,name,&#123;clone: <span class="literal">true</span>&#125;,<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">const</span> meta = &#123;</span><br><span class="line">                name,</span><br><span class="line">                description: answers.description,</span><br><span class="line">                author: answers.author</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">const</span> fileName = <span class="string">`<span class="subst">$&#123;name&#125;</span>/package.json`</span>;</span><br><span class="line">            <span class="keyword">const</span> content = fs.readFileSync(fileName).toString();</span><br><span class="line">            <span class="keyword">const</span> result = handlebars.compile(content)(meta);</span><br><span class="line">            fs.writeFileSync(fileName, result);</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>这里使用了 node.js 的文件模块 fs，将 handlebars 渲染完后的模板重新写入到文件中。</p>
+<ol start="8">
+<li>视觉美化<br>在用户输入答案之后，开始下载模板，这时候使用 ora 来提示用户正在下载中。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ora = <span class="built_in">require</span>(<span class="string">'ora'</span>);</span><br><span class="line"><span class="comment">// 开始下载</span></span><br><span class="line"><span class="keyword">const</span> spinner = ora(<span class="string">'The template is being downloaded...'</span>);</span><br><span class="line">spinner.start();</span><br><span class="line"><span class="comment">// 下载失败调用</span></span><br><span class="line">spinner.fail();</span><br><span class="line"><span class="comment">// 下载成功调用</span></span><br><span class="line">spinner.succeed();</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>然后通过 chalk 来为打印信息加上样式，比如成功信息为绿色，失败信息为红色，这样子会让用户更加容易分辨，同时也让终端的显示更加的好看。<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> chalk = require(<span class="string">'chalk'</span>);</span><br><span class="line">console.<span class="built_in">log</span>(chalk.<span class="built_in">green</span>(<span class="string">'Success'</span>));</span><br><span class="line">console.<span class="built_in">log</span>(chalk.<span class="built_in">red</span>(<span class="string">'Fail'</span>));</span><br></pre></td></tr></table></figure></p>
+<p>除了给打印信息加上颜色之外，还可以使用 log-symbols 在信息前面加上 √ 或 × 等的图标。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> chalk = <span class="built_in">require</span>(<span class="string">'chalk'</span>);</span><br><span class="line"><span class="keyword">const</span> symbols = <span class="built_in">require</span>(<span class="string">'log-symbols'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(symbols.success, chalk.green(<span class="string">'Success'</span>));</span><br><span class="line"><span class="built_in">console</span>.log(symbols.error, chalk.red(<span class="string">'Fail'</span>));</span><br></pre></td></tr></table></figure></p>
+<ol start="9">
+<li>完整示例<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">#! <span class="regexp">/usr/</span>bin/env node</span><br><span class="line"><span class="keyword">const</span> program = <span class="built_in">require</span>(<span class="string">'commander'</span>);</span><br><span class="line"><span class="keyword">const</span> download = <span class="built_in">require</span>(<span class="string">'download-git-repo'</span>);</span><br><span class="line"><span class="keyword">const</span> inquirer = <span class="built_in">require</span>(<span class="string">'inquirer'</span>);</span><br><span class="line"><span class="keyword">const</span> handlebars = <span class="built_in">require</span>(<span class="string">'handlebars'</span>);</span><br><span class="line"><span class="keyword">const</span> ora = <span class="built_in">require</span>(<span class="string">'ora'</span>);</span><br><span class="line"><span class="keyword">const</span> chalk = <span class="built_in">require</span>(<span class="string">'chalk'</span>);</span><br><span class="line"><span class="keyword">const</span> symbols = <span class="built_in">require</span>(<span class="string">'log-symbols'</span>);</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line">program.version(<span class="string">'1.0.0'</span>, <span class="string">'-v'</span>, <span class="string">'--version'</span>)</span><br><span class="line">    .command(<span class="string">'init &lt;name&gt;'</span>)</span><br><span class="line">    .action(<span class="function">(<span class="params">name</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (!fs.existsSync(name)) &#123;</span><br><span class="line">            inquirer.prompt([</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">type</span>: <span class="string">'list'</span>,</span><br><span class="line">                    choices: [<span class="string">'umi'</span>, <span class="string">'react-webpack'</span>, <span class="string">'react-antd'</span>],</span><br><span class="line">                    name: <span class="string">'platform'</span>,</span><br><span class="line">                    message: <span class="string">'Please select the project you want to install.'</span></span><br><span class="line">                &#125;, &#123;</span><br><span class="line">                    name: <span class="string">'version'</span>,</span><br><span class="line">                    message: <span class="string">'version:(1.0.0)'</span></span><br><span class="line">                &#125;, &#123;</span><br><span class="line">                    name: <span class="string">'description'</span>,</span><br><span class="line">                    message: <span class="string">'description:'</span></span><br><span class="line">                &#125;, &#123;</span><br><span class="line">                    name: <span class="string">'author'</span>,</span><br><span class="line">                    message: <span class="string">'author:'</span></span><br><span class="line">                &#125;]).then(<span class="function">(<span class="params">answers</span>) =&gt;</span> &#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(answers.author);</span><br><span class="line">                    <span class="keyword">const</span> spinner = ora(<span class="string">'The template is being downloaded...'</span>);</span><br><span class="line">                    <span class="keyword">const</span> platform = answers.platform;</span><br><span class="line">                    spinner.start();</span><br><span class="line"></span><br><span class="line">                    download(<span class="string">'https://github.com/879733672/all-web-cli.git#&#123;platform&#125;'</span>, name, &#123; clone: <span class="literal">true</span> &#125;, <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">                        <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                            spinner.fail();</span><br><span class="line">                            <span class="built_in">console</span>.log(symbols.error, chalk.red(err));</span><br><span class="line">                        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                            spinner.succeed();</span><br><span class="line">                            <span class="keyword">const</span> fileName = <span class="string">`&#123;name&#125;/package.json`</span>;</span><br><span class="line">                            <span class="keyword">const</span> meta = &#123;</span><br><span class="line">                                name,</span><br><span class="line">                                description: answers.description,</span><br><span class="line">                                author: answers.author,</span><br><span class="line">                                version: answers.version || <span class="string">'1.0.0'</span></span><br><span class="line">                            &#125;</span><br><span class="line">                            <span class="keyword">if</span> (fs.existsSync(fileName)) &#123;</span><br><span class="line">                                <span class="keyword">const</span> content = fs.readdirSync(fileName).toString();</span><br><span class="line">                                <span class="keyword">const</span> result = handlebars.compile(content)(meta);</span><br><span class="line">                                fs.writeFileSync(fileName, result);</span><br><span class="line">                            &#125;</span><br><span class="line">                            <span class="built_in">console</span>.log(symbols.success, chalk.green(<span class="string">'Done'</span>))</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;);</span><br><span class="line">                &#125;);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//错误提示项目已存在，避免覆盖原有项目</span></span><br><span class="line">            <span class="built_in">console</span>.log(symbols.error, chalk.red(<span class="string">"Already Existed."</span>));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">program.parse(process.argv);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>完成之后，就可以把脚手架发布到 npm 上面，通过 -g 进行全局安装，就可以在自己本机上执行 ice init [name] 来初始化项目，这样便完成了一个简单的脚手架工具了</p>
+
+        </div>
+        
+                    <div class="post-footer">
+                        <div>
+                            
+                                转载声明：
+                                    商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="https://github.com/879733672" target="_blank">小橙</a>
+                                        
+                                            
+                        </div>
+                        <div>
+                            
+                        </div>
+                    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/05/14/前端如何进行npm发布？/" class="pre-post btn btn-default" title="前端如何进行npm发布？">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">
+                前端如何进行npm发布？
+            </span>
+        </a>
+        
+            
+                <a href="/2019/04/20/IntersectionObserver介绍/" class="next-post btn btn-default" title="IntersectionObserver介绍">
+                    <span class="hidden-lg">下一篇</span>
+                    <span class="hidden-xs">
+                        IntersectionObserver介绍
+                    </span><i class="fa fa-angle-right fa-fw"></i>
+                </a>
+                
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前端脚手架搭建"><span class="toc-text">前端脚手架搭建</span></a></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+    访问量:
+    <strong id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    &nbsp; | &nbsp;
+    访客数:
+    <strong id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2019
+                    
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/assets/tagcanvas.min.js?rev=2.9"></script>
+<script>
+var tagOption = {
+    textColour: '#444', // 字体颜色
+    outlineMethod: 'block', // 选中模式
+    outlineColour: '#FFDAB9', // 选中模式的颜色
+    interval: 30 || 30, // 动画帧之间的时间间隔，值越大，转动幅度越大
+    textHeight: 13,
+    outlineRadius: 3,
+    freezeActive: true || '', // 选中的标签是否继续滚动
+    frontSelect: true || '', // 不选标签云后部的标签
+    initial: [0.1, -0.1],
+    depth: 0.5,
+    decel: 0.95,
+    maxSpeed: 0.03,
+    reverse: true || '', // 是否反向触发
+    fadeIn: 500, // 进入动画时间
+    wheelZoom: false || '' // 是否启用鼠标滚轮
+}
+TagCanvas.Start('tag-cloud-3d', '', tagOption);
+</script>
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="/js/app.js?rev=@@hash"></script>
+</body>
+</html>

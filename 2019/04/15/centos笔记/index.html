@@ -1,0 +1,326 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="小橙">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="//website.cwzcfj.cn">
+    <!--SEO-->
+
+<meta name="keywords" content="工具,centos7,环境搭建">
+
+
+<meta name="description" content="Centos使用笔记Centos6忘记密码解决办法，root和普通用户均可?参考地址: http://www.cnblogs.com/ljmjjy0820/p/6129893.html
+
+连接s...">
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+<title>
+    
+    Centos 笔记 |
+    
+    小橙
+</title>
+
+<link rel="alternate" href="/atom.xml" title="小橙" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+</head></html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    
+<header class="main-header" style="background-image:url(
+    https://image.sitapix.com/index-thumb/sitapix-photo-4374743-via-sitapix-com.jpeg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="xiao cheng">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                 
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="//website.cwzcfj.cn">
+                        小橙</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                首页</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/前端/"><i class="fa "></i>
+                                前端</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/工具/"><i class="fa "></i>
+                                工具</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Centos 笔记">
+            
+                    Centos 笔记
+                        
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/工具/">工具</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-link" href="/tags/centos7/">centos7</a> <a class="tag-link" href="/tags/工具/">工具</a> <a class="tag-link" href="/tags/环境搭建/">环境搭建</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2019/04/15</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+            
+                
+    </div>
+    
+        <div class="post-body post-content">
+            <h2 id="Centos使用笔记"><a href="#Centos使用笔记" class="headerlink" title="Centos使用笔记"></a>Centos使用笔记</h2><h3 id="Centos6忘记密码解决办法，root和普通用户均可"><a href="#Centos6忘记密码解决办法，root和普通用户均可" class="headerlink" title="Centos6忘记密码解决办法，root和普通用户均可?"></a>Centos6忘记密码解决办法，root和普通用户均可?</h3><p>参考地址: <a href="http://www.cnblogs.com/ljmjjy0820/p/6129893.html" target="_blank">http://www.cnblogs.com/ljmjjy0820/p/6129893.html</a></p>
+<ol>
+<li><p>连接ssh</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">输入命令：rpm -qa | grep ssh</span><br><span class="line">注：若没安装SSH则可输入：yum <span class="keyword">install</span> openssh-<span class="keyword">server</span>安装</span><br><span class="line"></span><br><span class="line">启动SSH服务</span><br><span class="line"></span><br><span class="line">输入命令：service sshd restart  重启SSH服务。</span><br><span class="line"> 命令：service sshd <span class="keyword">start</span> 启动服务 |  命令：service sshd <span class="keyword">stop</span> 停止服务  </span><br><span class="line"> 重启后可输入：netstat -antp | grep sshd 查看是否启动<span class="number">22</span>端口（可略）</span><br><span class="line"></span><br><span class="line">如何设置SSH服务为开机启动？</span><br><span class="line"></span><br><span class="line">输入命令：chkconfig sshd <span class="keyword">on</span> 即可。</span><br><span class="line">注：若是chkconfig sshd <span class="keyword">off</span>则禁止SSH开机启动。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在安装完CentOS6.5以后,通过ifconfig来查看IP来使用putty软件来实现远程链接,但发现没有eth0,只有l0？</p>
+<p> 解决参考：<a href="http://www.linuxidc.com/Linux/2015-01/111265.htm" target="_blank">http://www.linuxidc.com/Linux/2015-01/111265.htm</a></p>
+</li>
+</ol>
+<p>查询\安装SSH服务<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#rpm -qa |grep ssh 检查是否装了SSH包</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#yum install openssh-server 没有的话，安装SSH服务</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#chkconfig --list sshd 检查SSHD是否在本运行级别下设置为开机启动</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#chkconfig --level 2345 sshd on  如果没设置启动就设置下</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#service sshd restart  重新启动SSHD</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#netstat -antp |grep sshd  看看是否启动了22端口，需要确认下</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#iptables -nL  看看是否放行了22口</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#iptables -I INPUT -p tcp --dport 22 -j ACCEPT 没有的话放行22端口</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#iptables save 保存防火墙规则</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># vi /etc/ssh/sshd_config　   用vi打开SSH的配置文件，在这里我们先保持默认（允许普通用户通过口令登录）</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#useradd lhc    添加普通用户（lhc）</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#passwd lhc     修改lhc密码</span></span><br></pre></td></tr></table></figure></p>
+<p> 3.centos ping不通外网域名，能ping通地址？<br><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">主机名配置</span><br><span class="line">假如要设置主机名为：centos</span><br><span class="line">1.修改network	</span><br><span class="line"></span><br><span class="line">vi /etc/sysconfig/network</span><br><span class="line"></span><br><span class="line">HOSTNAME=centos</span><br><span class="line">:x   <span class="comment">#保存退出</span></span><br><span class="line"></span><br><span class="line">2.VM虚拟网络，采用桥接模式</span><br><span class="line">3.vim /etc/sysconfig/network-scripts/ifcfg-eth0</span><br><span class="line">配置好对应的ip，GETWAY，HOSTNAME，DSN1等参数，如下所示：</span><br><span class="line"></span><br><span class="line">BOOTPROTO=static  <span class="comment">#启用静态ip地址</span></span><br><span class="line">ONBOOT=yes             <span class="comment">#开启自动启用网络连接</span></span><br><span class="line">IPADDR=192.168.79.129  <span class="comment">#设置ip地址</span></span><br><span class="line">NETMASK=255.255.255.0 <span class="comment">#设置子网掩码</span></span><br><span class="line">GATEWAY=192.168.79.2   <span class="comment">#设置网关</span></span><br><span class="line">DNS1=8.8.8.8        <span class="comment">#设置主DNS</span></span><br><span class="line">DNS2=8.8.4.4     <span class="comment">#设置备DNS</span></span><br><span class="line">IPV6INIT=no            <span class="comment">#禁用ipv6</span></span><br><span class="line">HWADDR=00:0C:29:A9:91:42</span><br><span class="line"></span><br><span class="line">service ip6tables stop   <span class="comment">#停止IPV6服务</span></span><br><span class="line">chkconfig ip6tables off      <span class="comment">#禁止ipv6开机启动</span></span><br><span class="line"></span><br><span class="line">//重启network</span><br><span class="line">service netwrok restart</span><br><span class="line">4.检查虚拟机里面网络编辑Ant配置，是否和对应本地配置匹配。这里就不截图了。</span><br></pre></td></tr></table></figure></p>
+<p>  4.常用的命令</p>
+<p>  地址:<a href="http://www.cnblogs.com/wangpd/p/6876825.html" target="_blank"> http://www.cnblogs.com/wangpd/p/6876825.html</a><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum命令安装</span><br><span class="line">epel是社区强烈打造的免费开源发行软件包版本库。</span><br><span class="line">yum <span class="keyword">install</span> epel-<span class="keyword">release</span> -y</span><br></pre></td></tr></table></figure></p>
+<p>yum命令<br>  地址:</p>
+<p><a href="http://man.linuxde.net/yum" target="_blank">http://man.linuxde.net/yum</a></p>
+<p>centos7<br><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">查询是否自启动</span><br><span class="line"><span class="string">systemctl </span><span class="built_in">list-unit-files</span></span><br><span class="line"><span class="built_in"></span></span><br><span class="line"><span class="built_in">查询所有已启动服务</span>	</span><br><span class="line"><span class="string">systemctl </span><span class="built_in">list-units</span> <span class="built_in">--type=service</span></span><br><span class="line"><span class="built_in"></span></span><br><span class="line"><span class="built_in">使某服务自动启动</span></span><br><span class="line"><span class="built_in">systemctl</span> <span class="string">enable </span>  <span class="string">httpd.</span><span class="string">service</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">使</span>某服务不自动启动		</span><br><span class="line"><span class="string">systemctl </span><span class="string">disable </span><span class="string">httpd.</span><span class="string">service</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">启</span>动某服务</span><br><span class="line"><span class="string">systemctl </span><span class="string">start </span><span class="string">httpd.</span><span class="string">service</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">停</span>止某服务</span><br><span class="line"><span class="string">systemctl </span><span class="string">stop </span><span class="string">httpd.</span><span class="string">service</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">重</span>启某服务</span><br><span class="line"><span class="string">systemctl </span><span class="string">restart </span><span class="string">httpd.</span><span class="string">service</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">TCP </span><span class="string">listen</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">#</span> <span class="string">ss </span>-<span class="string">lt</span></span><br><span class="line"><span class="string">UDP </span><span class="string">listen</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">#</span> <span class="string">ss </span>-<span class="string">ul</span></span><br><span class="line"><span class="string">TCP连</span>线</span><br><span class="line"></span><br><span class="line"><span class="comment"># ss -t</span></span><br><span class="line"></span><br><span class="line">//查看端口使用情况</span><br><span class="line"><span class="string">ss </span>-<span class="string">tln</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">ss </span>-a    查看所有服务端口</span><br></pre></td></tr></table></figure></p>
+<p>centos firewalld简单使用</p>
+<p>  <a href="http://blog.csdn.net/y534560449/article/details/65626183" target="_blank">http://blog.csdn.net/y534560449/article/details/65626183</a></p>
+<p>centos PHP环境搭建</p>
+<p><a href="http://www.cnblogs.com/zhaosiwen/p/5157757.html" target="_blank">http://www.cnblogs.com/zhaosiwen/p/5157757.html</a></p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line">//查看安装的模块</span><br><span class="line">php -m</span><br><span class="line">php -i | grep php.ini</span><br><span class="line"><span class="comment">#apache主配置文件</span></span><br><span class="line">/etc/httpd/conf/httpd.conf</span><br><span class="line"><span class="comment">#相关配置 比如vhost文件就可以创建在该目录下</span></span><br><span class="line">/etc/httpd/conf.d/</span><br><span class="line"><span class="comment">#模块配置文件 比如你要开启rewrite模块，可能你就需要到这个目录下面做一些配置了</span></span><br><span class="line">/etc/httpd/conf.modules.d/</span><br><span class="line"><span class="comment">#web可访问目录 网站根目录</span></span><br><span class="line">/var/www/html</span><br><span class="line"><span class="comment">#apache日志文件目录</span></span><br><span class="line">/var/<span class="built_in">log</span>/httpd/</span><br><span class="line"></span><br><span class="line">//查看php包</span><br><span class="line">	rpm -qa | grep php</span><br><span class="line"></span><br><span class="line">rpm -qa |grep -i mysql</span><br><span class="line"></span><br><span class="line">//删除包</span><br><span class="line">yum remove php</span><br><span class="line"></span><br><span class="line">//查询是否有残留目录</span><br><span class="line">whereis php</span><br><span class="line"></span><br><span class="line">//删除查看的php包</span><br><span class="line">rpm -e *</span><br><span class="line"></span><br><span class="line">//安装php需要先添加EPEL 包的仓库源</span><br><span class="line">yum -y install epel-release</span><br><span class="line"></span><br><span class="line">//安装nginx</span><br><span class="line">yum -y install nginx</span><br><span class="line"></span><br><span class="line">//查看源目录</span><br><span class="line">cd /etc/yum.repos.d</span><br><span class="line">ls</span><br><span class="line">//清除缓存</span><br><span class="line">yum clean all</span><br><span class="line">//重新生成缓存</span><br><span class="line">yum makecache</span><br><span class="line"></span><br><span class="line"><span class="number">1.</span>安装</span><br><span class="line">yum -y install mariadb*</span><br><span class="line"><span class="number">2.</span>开启MySQL服务</span><br><span class="line">systemctl <span class="built_in">start</span> mariadb.service</span><br><span class="line"><span class="number">3.</span>设置开机启动MySQL服务</span><br><span class="line">systemctl enable mariadb.service</span><br><span class="line"><span class="number">4.</span>设置root帐户的密码</span><br><span class="line">mysql_secure_installation</span><br><span class="line"></span><br><span class="line">//php7-fpm 添加另外一个仓库</span><br><span class="line">//PHP7-FPM webtatic 仓库：</span><br><span class="line">rpm -Uvh <span class="keyword">https</span>://mirror.webtatic.com/yum/el7/webtatic-release.rpm</span><br><span class="line"></span><br><span class="line">yum -y install php70w-fpm php70w-cli php70w-gd php70w-mcrypt php70w-mysql php70w-pear php70w-xml php70w-mbstring php70w-pdo php70w-json php70w-pecl-apcu php70w-pecl-apcu-devel</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">apache</span><br><span class="line">启动</span><br><span class="line">systemctl <span class="built_in">start</span> httpd</span><br><span class="line">停止</span><br><span class="line">systemctl <span class="built_in">stop</span> httpd</span><br><span class="line">重启</span><br><span class="line">systemctl restart httpd</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql</span><br><span class="line">启动</span><br><span class="line">systemctl <span class="built_in">start</span> mysqld</span><br><span class="line">停止</span><br><span class="line">systemctl <span class="built_in">stop</span> mysqld</span><br><span class="line">重启</span><br><span class="line">systemctl restart mysqld</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">php-fpm</span><br><span class="line">启动</span><br><span class="line">systemctl <span class="built_in">start</span> php-fpm</span><br><span class="line">停止</span><br><span class="line">systemctl <span class="built_in">stop</span> php-fpm</span><br><span class="line">重启</span><br><span class="line">systemctl restart php-fpm</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">nginx</span><br><span class="line">启动</span><br><span class="line">systemctl <span class="built_in">start</span> nginx</span><br><span class="line">停止</span><br><span class="line">systemctl <span class="built_in">stop</span> nginx</span><br><span class="line">重启</span><br><span class="line">systemctl restart nginx</span><br></pre></td></tr></table></figure>
+<p> <a href="http://www.jianshu.com/p/999949f8fbf3" tareget="_blank" target="_blank" rel="noopener">http://www.jianshu.com/p/999949f8fbf3</a></p>
+<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">查看所有打开的端口：</span> <span class="comment">firewall</span><span class="literal">-</span><span class="comment">cmd</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">zone=public</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">list</span><span class="literal">-</span><span class="comment">ports</span></span><br><span class="line"><span class="comment">更新防火墙规则：</span> <span class="comment">firewall</span><span class="literal">-</span><span class="comment">cmd</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">reload</span></span><br><span class="line"><span class="comment">添加</span></span><br><span class="line"><span class="comment">firewall</span><span class="literal">-</span><span class="comment">cmd</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">zone=public</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">add</span><span class="literal">-</span><span class="comment">port=80/tcp</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">permanent</span>    <span class="comment">（</span><span class="literal">-</span><span class="literal">-</span><span class="comment">permanent永久生效，没有此参数重启后失效）</span></span><br><span class="line"><span class="comment">删除</span></span><br><span class="line"><span class="comment">firewall</span><span class="literal">-</span><span class="comment">cmd</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">zone=</span> <span class="comment">public</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">remove</span><span class="literal">-</span><span class="comment">port=80/tcp</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">permanent</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">firewall</span><span class="literal">-</span><span class="comment">cmd</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">permanent</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">zone=public</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">add</span><span class="literal">-</span><span class="comment">port=3306/tcp</span></span><br><span class="line"><span class="comment">firewall</span><span class="literal">-</span><span class="comment">cmd</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">permanent</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">zone=public</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">add</span><span class="literal">-</span><span class="comment">port=3306/udp</span></span><br><span class="line"><span class="comment">这样就开放了相应的端口。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">执行</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">firewall</span><span class="literal">-</span><span class="comment">cmd</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">reload</span></span><br></pre></td></tr></table></figure>
+<p>mysql文章</p>
+<p><a href="http://blog.csdn.net/gebitan505/article/details/54613549" target="_blank">http://blog.csdn.net/gebitan505/article/details/54613549</a></p>
+<p>centos7重置密码。<br><a href="http://blog.csdn.net/keepd/article/details/77151006" target="_blank">http://blog.csdn.net/keepd/article/details/77151006</a></p>
+<p>mysql:<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>用户名和密码： root root</span><br><span class="line"><span class="number">2.</span>远程连接用户名和密码： admin admin</span><br></pre></td></tr></table></figure></p>
+<p>添加用户名和密码方法：<br><a href="http://www.cnblogs.com/chenggege/p/7761255.html" target="_blank">http://www.cnblogs.com/chenggege/p/7761255.html</a>    </p>
+<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">mysql 语法：</span><br><span class="line"></span><br><span class="line">show databases;  <span class="comment">//查询所有db</span></span><br><span class="line">use db;  <span class="comment">//选中要操作的数据库</span></span><br><span class="line">create table tableName (</span><br><span class="line">	id number,</span><br><span class="line">	bookName varchar(<span class="number">20</span>),</span><br><span class="line">	price varchar(<span class="number">20</span>)</span><br><span class="line">);		<span class="comment">//创建表</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">select</span> * <span class="keyword">from</span> tableName;	<span class="comment">//查询所有信息</span></span><br><span class="line"></span><br><span class="line">slecet * <span class="keyword">from</span> tableName where <span class="built_in">type</span>=xxx;	<span class="comment">//根据条件查询所有信息</span></span><br><span class="line"></span><br><span class="line">update tableName <span class="built_in">set</span> <span class="built_in">type</span>=<span class="string">'xxx'</span> where <span class="built_in">name</span>=<span class="string">"shuigu"</span>;<span class="comment">//根据条件更新某条数据</span></span><br><span class="line"></span><br><span class="line">delete <span class="keyword">from</span> tableName where <span class="built_in">name</span>=<span class="string">'xxx'</span> <span class="comment">//删除单条数据</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="built_in">DROP</span> DATABASE 库名;  <span class="comment">//删除db数据库</span></span><br><span class="line"></span><br><span class="line"> <span class="built_in">DROP</span> TABLE 表名；  <span class="comment">//删除表</span></span><br><span class="line"></span><br><span class="line">DELETE <span class="keyword">FROM</span> 表名;  <span class="comment">//清空表</span></span><br></pre></td></tr></table></figure>
+        </div>
+        
+                    <div class="post-footer">
+                        <div>
+                            
+                                转载声明：
+                                    商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="https://github.com/879733672" target="_blank">小橙</a>
+                                        
+                                            
+                        </div>
+                        <div>
+                            
+                        </div>
+                    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/04/15/Audio/" class="pre-post btn btn-default" title="H5 Audio 对象介绍">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">
+                H5 Audio 对象介绍
+            </span>
+        </a>
+        
+            
+                <a href="/2019/04/15/curl命令/" class="next-post btn btn-default" title="curl常用命令">
+                    <span class="hidden-lg">下一篇</span>
+                    <span class="hidden-xs">
+                        curl常用命令
+                    </span><i class="fa fa-angle-right fa-fw"></i>
+                </a>
+                
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Centos使用笔记"><span class="toc-text">Centos使用笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Centos6忘记密码解决办法，root和普通用户均可"><span class="toc-text">Centos6忘记密码解决办法，root和普通用户均可?</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+    访问量:
+    <strong id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    &nbsp; | &nbsp;
+    访客数:
+    <strong id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2019
+                    
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/assets/tagcanvas.min.js?rev=2.9"></script>
+<script>
+var tagOption = {
+    textColour: '#444', // 字体颜色
+    outlineMethod: 'block', // 选中模式
+    outlineColour: '#FFDAB9', // 选中模式的颜色
+    interval: 30 || 30, // 动画帧之间的时间间隔，值越大，转动幅度越大
+    textHeight: 13,
+    outlineRadius: 3,
+    freezeActive: true || '', // 选中的标签是否继续滚动
+    frontSelect: true || '', // 不选标签云后部的标签
+    initial: [0.1, -0.1],
+    depth: 0.5,
+    decel: 0.95,
+    maxSpeed: 0.03,
+    reverse: true || '', // 是否反向触发
+    fadeIn: 500, // 进入动画时间
+    wheelZoom: false || '' // 是否启用鼠标滚轮
+}
+TagCanvas.Start('tag-cloud-3d', '', tagOption);
+</script>
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="/js/app.js?rev=@@hash"></script>
+</body>
+</html>
