@@ -1,0 +1,26 @@
+<% 
+    if(theme.banner && theme.banner.length >0){
+        var urls2 = theme.banner;
+        var random2 = Math.floor(Math.random() * (urls2.length));
+        var _imgItemUrl = urls2[random2];
+    }
+%>
+<header class="main-header" <% if(_imgItemUrl){ %> style="background-image:url(
+    <%= url_for(_imgItemUrl) %>)"
+    <%}%> >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='<%= config.author %>'>
+            <%- image_tag('img/avatar.jpg',{alt:'logo头像',class:'img-responsive center-block'}) %>
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            <% if(theme.branding){ %>
+            <h2>
+                <%= theme.branding %>
+            </h2>
+            <% } else { %>
+            <%- image_tag('img/branding.png',{alt:'Snippet 博客主题',class:'img-responsive center-block'}) %>
+            <% } %>
+        </div>
+    </div>
+</header>
