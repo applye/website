@@ -1,4 +1,7 @@
 ---
+abbrlink: 9
+---
+---
 abbrlink: 1
 title: React-native之开源Tab导航组件
 categories: '前端'
@@ -7,8 +10,7 @@ tags:
   - 'react-native'
 comments: false
 date: 2019-04-15 22:12:38
-img: 'https://image.sitapix.com/index-thumb/sitapix-photo-270283-via-sitapix-com.jpeg'
----
+img: 'https://raw.githubusercontent.com/879733672/images/cdn/img/202209041737718.jpg'
 ## React-native之开源Tab导航组件	
 
 ### 简介
@@ -111,6 +113,12 @@ img: 'https://image.sitapix.com/index-thumb/sitapix-photo-270283-via-sitapix-com
         width: 40,
         height: 33,
     },
+    center: {
+        justifyContent: 'center',
+        alignItems: 'center',
+ 	},
+	});
+```
     center: {
         justifyContent: 'center',
         alignItems: 'center',

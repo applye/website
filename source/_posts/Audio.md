@@ -8,7 +8,7 @@ tags:
   - 'audio'
 comments: false
 date: 2019-04-15 23:47:20
-img: 'https://image.sitapix.com/index-thumb/sitapix-photo-305084-via-sitapix-com.jpeg'
+img: 'https://raw.githubusercontent.com/879733672/images/cdn/img/202209041724520.jpg'
 ---
 
 ## Audio 对象介绍

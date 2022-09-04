@@ -30,7 +30,7 @@ rss: /atom.xml
 ## Carousel
 carousel:
   img: "./img/head-img.jpg"
-  url: "https://promotion.aliyun.com/ntms/act/qwbk.html?userCode=xs0pypd2"
+  url: "/#"
 
 # 各个小工具的设置
 
@@ -110,16 +110,16 @@ branding: " "
 
 ## 设置banner背景图片
 banner:
-  - https://image.sitapix.com/index-thumb/sitapix-photo-4380884-via-sitapix-com.jpeg@!w1920
-  - https://image.sitapix.com/index-thumb/sitapix-photo-4374743-via-sitapix-com.jpeg
-  - https://cdn.colorhub.me/cOtKXzal5QIwfk_bNEMpLkx4ZktUtlQ3l76Y_cNEokc/auto/0/500/ce/0/bG9jYWw6Ly8vYTUv/M2UvZTljM2Y0NTg2/ZmQxOTI3NzczMWI5/OTA5YzkwYzhjMDRh/MDFhYTUzZS5qcGc.jpg
-  
+  - https://raw.githubusercontent.com/879733672/images/cdn/img/%E4%B8%8B%E8%BD%BD.jpg
+  - https://raw.githubusercontent.com/879733672/images/cdn/img/202209041626561.jpg
+  - https://raw.githubusercontent.com/879733672/images/cdn/img/202209041818975.jpg
+
 ## 首页列表底部面板
 homePanel: true
 
 ## 缩略图自定义随机图片
 defaultImgs:
-  - https://image.sitapix.com/index-thumb/abstract-business-code-270348-via-sitapix-com.jpeg
+  - https://raw.githubusercontent.com/879733672/images/cdn/img/202208282225766.jpg
 
 ## 截取文章首页描述字数
 excerptLength: 120
@@ -207,9 +207,9 @@ gitment:
   perPage: 10
 
 ### 友言评论(服务不稳定)
-uyan:
-  enable: false
-  uyan_id: 1966422
+# uyan:
+#   enable: true
+#   uyan_id: 1966422
 
 ## 网站访客统计
 visit_counter:

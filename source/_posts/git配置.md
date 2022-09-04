@@ -7,7 +7,7 @@ tags:
   - 'git'
 comments: false
 date: 2019-04-15 23:28:34
-img: 'https://image.sitapix.com/index-thumb/android-browser-business-1482061-via-sitapix-com.jpeg'
+img: 'https://raw.githubusercontent.com/879733672/images/cdn/img/202209041732591.jpg'
 ---
 
 > 1. TortoiseGit 远程上传push代码，配置不用每次输入用户名和密码方法

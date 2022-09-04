@@ -7,7 +7,7 @@ tags:
   - 'curl'
 comments: false
 date: 2019-04-15 23:31:23
-img: 'https://image.sitapix.com/index-thumb/sitapix-photo-4400414-via-sitapix-com.jpeg'
+img: 'https://raw.githubusercontent.com/879733672/images/cdn/img/202209041730053.jpg'
 ---
 ## curl使用常用命令
 ```

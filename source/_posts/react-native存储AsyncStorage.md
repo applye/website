@@ -8,7 +8,7 @@ tags:
   - 'AsyncStorage'
 comments: false
 date: 2019-04-15 22:18:34
-img: 'https://image.sitapix.com/index-thumb/sitapix-photo-2971692-via-sitapix-com.jpeg'
+img: 'https://raw.githubusercontent.com/879733672/images/cdn/img/202209041634474.jpg'
 ---
 ## React Native APi AsyncStorage的使用。
 ### 简介

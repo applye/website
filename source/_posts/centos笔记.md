@@ -8,7 +8,7 @@ tags:
   - '环境搭建'
 comments: false
 date: 2019-04-15 23:37:40
-img: 'https://image.sitapix.com/index-thumb/sitapix-photo-4388473-via-sitapix-com.jpeg'
+img: 'https://raw.githubusercontent.com/879733672/images/cdn/img/202209041726156.jpg'
 ---
 ## Centos使用笔记
 

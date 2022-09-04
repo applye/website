@@ -1,4 +1,4 @@
-<% if(theme.uyan.enable && is_post()){ %>
+<% if(theme.uyan && theme.uyan.enable && is_post()){ %>
     <%- partial('_vendor/comments/uyan') %>
 <% } else if(theme.gitment.enable && is_post()) { %>
     <%- partial('_vendor/comments/gitment') %>

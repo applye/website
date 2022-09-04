@@ -10,7 +10,7 @@ tags:
   - '闭包'
 comments: false
 date: 2019-04-15 22:26:20
-img: 'https://image.sitapix.com/index-thumb/art-board-cooking-350417-via-sitapix-com.jpeg'
+img: 'https://raw.githubusercontent.com/879733672/images/cdn/img/202209041734725.jpg'
 ---
 ## js基础知识点
 > js面向对象
