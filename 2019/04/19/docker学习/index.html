@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="zh-CN">
 
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
     <!--Setting-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -73,10 +73,11 @@
 <![endif]-->
 <body>
     
-<header class="main-header" style="background-image:url(
-    https://raw.githubusercontent.com/879733672/images/cdn/img/202209041626561.jpg)">
+<header class="main-header"  style="background-image:url(
+    https://raw.githubusercontent.com/879733672/images/cdn/img/202209041818975.jpg)"
+     >
     <div class="main-header-box">
-        <a class="header-avatar" href="/" title="xiao cheng">
+        <a class="header-avatar" href="/" title='xiao cheng'>
             <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
         </a>
         <div class="branding">
@@ -111,6 +112,11 @@
                         <li role="presentation" class="text-center">
                             <a href="/categories/前端/"><i class="fa "></i>
                                 前端</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/后端/"><i class="fa "></i>
+                                后端</a>
                         </li>
                         
                         <li role="presentation" class="text-center">
@@ -313,7 +319,7 @@
 <p>WORKDIR /app：指定接下来的工作路径为/app。</p>
 <p>RUN npm install：在/app目录下，运行npm install命令安装依赖。注意，安装后所有的依赖，都将打包进入 image 文件。</p>
 <p>EXPOSE 3000：将容器 3000 端口暴露出来， 允许外部连接这个端口。</p>
-<p>有了 Dockerfile 文件以后，就可以使用docker image build命令创建 image 文件了。<br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ docker <span class="built_in">image</span> build-t koa-<span class="built_in">demo</span>.</span><br><span class="line"># 或者</span><br><span class="line">$ docker <span class="built_in">image</span> build-t koa-<span class="built_in">demo</span>:<span class="number">0.0</span>.1.</span><br></pre></td></tr></table></figure></p>
+<p>有了 Dockerfile 文件以后，就可以使用docker image build命令创建 image 文件了。<br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ docker <span class="built_in">image</span> build-t koa-<span class="built_in">demo</span>.</span><br><span class="line"># 或者</span><br><span class="line">$ docker <span class="built_in">image</span> build-t koa-<span class="built_in">demo</span>:<span class="number">0.0</span><span class="number">.1</span>.</span><br></pre></td></tr></table></figure></p>
 <p>上面代码中，-t参数用来指定 image 文件的名字，后面还可以用冒号指定标签。如果不指定，默认的标签就是latest。最后的那个点表示 Dockerfile 文件所在的路径，上例是当前路径，所以是一个点。<br>如果运行成功，就可以看到新生成的 image 文件koa-demo了。<br><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker <span class="keyword">image</span> <span class="keyword">ls</span></span><br></pre></td></tr></table></figure></p>
 <p>生成容器<br>docker container run命令会从 image 文件生成容器。<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ docker container <span class="built_in">run</span> -p <span class="number">8000</span>:<span class="number">3000</span> -<span class="keyword">it</span> koa-demo/bin/bash</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">$ docker container <span class="built_in">run</span> -p <span class="number">8000</span>:<span class="number">3000</span> -<span class="keyword">it</span> koa-demo:<span class="number">0.0</span><span class="number">.1</span>/bin/bash</span><br></pre></td></tr></table></figure></p>
 <p>上面命令的各个参数含义如下：<br>-p参数：容器的 3000 端口映射到本机的 8000 端口。</p>
@@ -327,7 +333,7 @@
 <p>首先，去hub.docker.com或cloud.docker.com注册一个账户。然后，用下面的命令登录。<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>docker login</span><br></pre></td></tr></table></figure></p>
 <p>接着，为本地的 image 标注用户名和版本。<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ docker image tag[<span class="string">imageName</span>][<span class="symbol">username</span>]/[repository]:[tag]</span><br><span class="line"><span class="section"># 实例</span></span><br><span class="line">$ docker image tag koa-demos:0.0.1ruanyf/koa-demos:0.0.1</span><br></pre></td></tr></table></figure></p>
 <p>也可以不标注用户名，重新构建一下 image 文件。<br><figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker image build-t[username]/[repository]:[tag].</span><br></pre></td></tr></table></figure></p>
-<p>最后，发布 image 文件。<br><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker image push<span class="string">[username]</span>/<span class="string">[repository]</span>:<span class="string">[tag]</span></span><br></pre></td></tr></table></figure></p>
+<p>最后，发布 image 文件。<br><figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker image push<span class="comment">[username]</span>/<span class="comment">[repository]</span>:<span class="comment">[tag]</span></span><br></pre></td></tr></table></figure></p>
 <p>发布成功以后，登录 hub.docker.com，就可以看到已经发布的 image 文件。</p>
 <p>11、其他有用的命令<br>前面的docker container run命令是新建容器，每运行一次，就会新建一个容器。同样的命令运行两次，就会生成两个一模一样的容器文件。如果希望重复使用容器，就要使用docker container start命令，它用来启动已经生成、已经停止运行的容器文件</p>
 <figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker <span class="keyword">container</span> start<span class="comment">[containerID]</span></span><br></pre></td></tr></table></figure>
@@ -458,7 +464,7 @@
 </article>
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2019/04/20/markdown简单使用/" class="pre-post btn btn-default" title="markdown简单使用">
+        <a href="/2019/04/20/markdown简单使用/" class="pre-post btn btn-default" title='markdown简单使用'>
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
             <span class="hidden-xs">
                 markdown简单使用
@@ -466,7 +472,8 @@
         </a>
         
             
-                <a href="/2019/04/17/前端常用命令集/" class="next-post btn btn-default" title="前端常用命令集">
+                <a href="/2019/04/17/前端常用命令集/" class="next-post btn btn-default"
+                    title='前端常用命令集'>
                     <span class="hidden-lg">下一篇</span>
                     <span class="hidden-xs">
                         前端常用命令集

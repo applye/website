@@ -1,0 +1,352 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="小橙">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="//website.cwzcfj.cn">
+    <!--SEO-->
+
+<meta name="keywords" content="图床,图库">
+
+
+<meta name="description" content="搭建GitHub+PicGo+jsDelivr搭建高速稳定免费自己的图床存储资源什么是图床?图床一般是指储存图片的服务器，将图片等资源和应用服务分开，有如下几点好处: 
+
+统一管理图片等资源
+防...">
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+<title>
+    
+    图床搭建教程 |
+    
+    小橙
+</title>
+
+<link rel="alternate" href="/atom.xml" title="小橙" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+</head></html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    
+<header class="main-header"  style="background-image:url(
+    https://raw.githubusercontent.com/879733672/images/cdn/img/202209041818975.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='xiao cheng'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                 
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="//website.cwzcfj.cn">
+                        小橙</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                首页</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/前端/"><i class="fa "></i>
+                                前端</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/后端/"><i class="fa "></i>
+                                后端</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/工具/"><i class="fa "></i>
+                                工具</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="图床搭建教程">
+            
+                    图床搭建教程
+                        
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/工具/">工具</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-link" href="/tags/图床/">图床</a> <a class="tag-link" href="/tags/图库/">图库</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2023/04/06</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+            
+                
+    </div>
+    
+        <div class="post-body post-content">
+            <h2 id="搭建GitHub-PicGo-jsDelivr搭建高速稳定免费自己的图床存储资源"><a href="#搭建GitHub-PicGo-jsDelivr搭建高速稳定免费自己的图床存储资源" class="headerlink" title="搭建GitHub+PicGo+jsDelivr搭建高速稳定免费自己的图床存储资源"></a>搭建GitHub+PicGo+jsDelivr搭建高速稳定免费自己的图床存储资源</h2><h3 id="什么是图床"><a href="#什么是图床" class="headerlink" title="什么是图床?"></a>什么是图床?</h3><p>图床一般是指储存图片的服务器，将图片等资源和应用服务分开，有如下几点好处: </p>
+<ol>
+<li>统一管理图片等资源</li>
+<li>防止应用服务器越来越臃肿</li>
+<li>减轻应用服务器的负担，加速页面访问速度</li>
+</ol>
+<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>一般图床为私有得或者公共的资源存储服务器，如七牛云、阿里云、腾讯云等，如果你搭建的是个人网站，那么没必要购买私有云服务器，成本比较高。</p>
+<p>也有免费的公共图床服务器，但这些服务器无论在安全性还是可靠性都是没有保障的，数据容易丢失，访问响应慢。</p>
+<p>想到可以在GitHub/Gitee上搭建GitHub Page，里面可以上传图片并且图片也可以访问，这不是很好的图床吗，本地可以保存一份，并且上传到Github/Gitee上云端也可以保存一份，还可以提供地址在线访问图片，这可以很好的解决我们的图床问题。<br>如果是在国内访问，推荐采用Gitee搭建图床，国外访问则采用Github page搭建。</p>
+<p>本文通过Github搭建图床，采用jsdelivr做高速CDN，采用PicGo开源工具进行图片管理。</p>
+<h3 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h3><ol>
+<li>新建图床仓库(以Github为例)。</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/879733672/images/img/2021-11-18_000824.png" alt></p>
+<ol start="2">
+<li>生成Token，供picGo配置</li>
+</ol>
+<p>在主页点击用户头像，选择【Settings】-【Developer settings】-【Personal access tokens】-【Generate new token】，填写好描述，勾选【repo】，然后点击【Generate token】生成一个Token，注意这个Token只会显示一次，先保存至记事本，后续会用到。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/879733672/images/img/2021-11-18_001722.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/879733672/images/master/img/2021-11-18_001849.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/879733672/images/master/img/2021-11-18_002027.png" alt></p>
+<p>保存生成后的token。</p>
+<ol start="3">
+<li>工具使用</li>
+</ol>
+<p>配置picGo</p>
+<p>uPic和iPic、PicGo类似，uPic，除了支持微博、码云、Github、腾讯云、阿里云、又拍云、七牛云等图床之外，还可以自定义配置图床。<br>uPic是一款开源简洁的图床客户端，方便用户直接上传图片到指定的存储空间，并获取有效的markdown图片地址，其默认图床为SM.MS，当然也支持配置腾讯云、七牛云、又拍云等常见的对象存储。最关键的是支持图床自定义配置，也让我毅然抛弃了一直以来付费使用的iPic。<br>在上传方式上，uPic支持本地选择/复制文件上传、截图上传，甚至可直接拖动文件到菜单栏uPic图标上完成上传动作。<br>在最新更新版本之后，uPic新增支持直接从浏览器中复制或者拖动在线图片上传到指定图床，这样就不用下载到本地再进行上传。</p>
+<p>下载<a href="https://github.com/Molunerfinn/picgo/releases" target="_blank" rel="noopener">PicGo</a>，选择对应的安装包。</p>
+<p><img src="https://raw.githubusercontent.com/879733672/images/master/img/2021-11-18_002734.png" alt></p>
+<ol start="4">
+<li><p>下载安装后打开picGo进行设置。</p>
+<ol>
+<li>设定仓库名：按照【用户名/图床仓库名】的格式填写</li>
+<li>设定分支名：【master】</li>
+<li>设定Token：粘贴上述生成的【Token】</li>
+<li>指定存储路径：填写想要储存的路径，如【img/】，这样就会在仓库下创建一个名为 img 的文件夹，图片将会储存在此文件夹中</li>
+<li>设定自定义域名：它的的作用是，在图片上传后，PicGo会按照【自定义域名+上传的图片名】的方式生成访问链接，放到粘贴板上，因为我们要使用jsDelivr加速访问，所以可以设置为<a href="https://cdn.jsdelivr.net/gh/用户名/图床仓库名，关于jsDelivr下面会说明。" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/用户名/图床仓库名，关于jsDelivr下面会说明。</a></li>
+</ol>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/879733672/images/master/img/2021-11-18_011902.png" alt></p>
+<ol start="5">
+<li>关于jsDelivr</li>
+</ol>
+<p>jsDelivr是一个致力于为开发者提供数千种Javascript、CSS等超过1650多种 Libraries 加速的免费CDN服务，该平台是首个「打通中国大陆与海外的免费CDN服务。<br>jsDelivr平台将服务重心放在更快速的网路连线，利用CDN技术来确保每个地区的使用者都能获得最好的连接速度。此外jsDelivr 可将不同的JavaScript 或CSS libraries 整合在一起，通过一段链结来载入网站，非常方便。<br>具体使用方法：<a href="https://cdn.jsdelivr.net/gh/你的用户名/你的仓库名@发布的版本号/文件路径。" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/你的用户名/你的仓库名@发布的版本号/文件路径。</a><br>其中：版本号不是必需的，是为了区分新旧资源，如果不使用版本号，将会直接引用最新资源。<br>例如：<br><a href="https://lihao1991.gitee.io/images-bed/iblog-bg-8922321312932423345.jpg" target="_blank" rel="noopener">https://lihao1991.gitee.io/images-bed/iblog-bg-8922321312932423345.jpg</a></p>
+<p>加载任何Github发布、提交或分支<br><a href="https://cdn.jsdelivr.net/gh/user/repo@version/file" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/user/repo@version/file</a><br>加载 jQuery v3.2.1<br><a href="https://cdn.jsdelivr.net/gh/jquery/jquery@3.2.1/dist/jquery.min.js" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/jquery/jquery@3.2.1/dist/jquery.min.js</a><br>完全省略该版本以获取最新版本<br><a href="https://cdn.jsdelivr.net/gh/jquery/jquery/dist/jquery.min.js" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/jquery/jquery/dist/jquery.min.js</a><br>在末尾添加/以获取资源目录列表<br><a href="https://cdn.jsdelivr.net/gh/jquery/jquery/" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/jquery/jquery/</a><br>至此，所有搭建工作已完成，可以高效的开发编写文档了。</p>
+
+        </div>
+        
+                    <div class="post-footer">
+                        <div>
+                            
+                                转载声明：
+                                    商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="https://github.com/879733672" target="_blank">小橙</a>
+                                        
+                                            
+                        </div>
+                        <div>
+                            
+                        </div>
+                    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2023/04/16/js算法习题/" class="pre-post btn btn-default" title='js算法习题'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">
+                js算法习题
+            </span>
+        </a>
+        
+            
+                <a href="/2023/04/02/jwt使用教程/" class="next-post btn btn-default"
+                    title='jwt使用教程'>
+                    <span class="hidden-lg">下一篇</span>
+                    <span class="hidden-xs">
+                        jwt使用教程
+                    </span><i class="fa fa-angle-right fa-fw"></i>
+                </a>
+                
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#搭建GitHub-PicGo-jsDelivr搭建高速稳定免费自己的图床存储资源"><span class="toc-text">搭建GitHub+PicGo+jsDelivr搭建高速稳定免费自己的图床存储资源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是图床"><span class="toc-text">什么是图床?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#搭建过程"><span class="toc-text">搭建过程</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+    访问量:
+    <strong id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    &nbsp; | &nbsp;
+    访客数:
+    <strong id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2019
+                    
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/assets/tagcanvas.min.js?rev=2.9"></script>
+<script>
+var tagOption = {
+    textColour: '#444', // 字体颜色
+    outlineMethod: 'block', // 选中模式
+    outlineColour: '#FFDAB9', // 选中模式的颜色
+    interval: 30 || 30, // 动画帧之间的时间间隔，值越大，转动幅度越大
+    textHeight: 13,
+    outlineRadius: 3,
+    freezeActive: true || '', // 选中的标签是否继续滚动
+    frontSelect: true || '', // 不选标签云后部的标签
+    initial: [0.1, -0.1],
+    depth: 0.5,
+    decel: 0.95,
+    maxSpeed: 0.03,
+    reverse: true || '', // 是否反向触发
+    fadeIn: 500, // 进入动画时间
+    wheelZoom: false || '' // 是否启用鼠标滚轮
+}
+TagCanvas.Start('tag-cloud-3d', '', tagOption);
+</script>
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="/js/app.js?rev=@@hash"></script>
+</body>
+</html>

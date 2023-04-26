@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="zh-CN">
 
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
     <!--Setting-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -19,7 +19,7 @@
     <link rel="dns-prefetch" href="//website.cwzcfj.cn">
     <!--SEO-->
 
-<meta name="keywords" content="前端,正则,js">
+<meta name="keywords" content="js,前端,正则">
 
 
 <meta name="description" content="正则表达式规则
@@ -78,10 +78,11 @@
 <![endif]-->
 <body>
     
-<header class="main-header" style="background-image:url(
-    https://raw.githubusercontent.com/879733672/images/cdn/img/%E4%B8%8B%E8%BD%BD.jpg)">
+<header class="main-header"  style="background-image:url(
+    https://raw.githubusercontent.com/879733672/images/cdn/img/%E4%B8%8B%E8%BD%BD.jpg)"
+     >
     <div class="main-header-box">
-        <a class="header-avatar" href="/" title="xiao cheng">
+        <a class="header-avatar" href="/" title='xiao cheng'>
             <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
         </a>
         <div class="branding">
@@ -116,6 +117,11 @@
                         <li role="presentation" class="text-center">
                             <a href="/categories/前端/"><i class="fa "></i>
                                 前端</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/后端/"><i class="fa "></i>
+                                后端</a>
                         </li>
                         
                         <li role="presentation" class="text-center">
@@ -197,7 +203,7 @@
 </li>
 <li><p>自定义能够匹配’多种字符’的表达式</p>
 <p>  使用方括号[]包含一系列字符，能够匹配其中任意一个字符。[^]包含一系列，则能够匹配其中字符之外的任意一个字符。同样，虽然匹配但只匹配一个，不是多个。</p>
-<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">[ab5@]</span>   匹配<span class="string">"a"</span>或<span class="string">"b"</span>或<span class="string">"5"</span>或<span class="string">"@"</span></span><br><span class="line"><span class="string">[^abc]</span>   匹配<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>之外的任意一个字符</span><br><span class="line"><span class="string">[f-k]</span>    匹配<span class="string">"f"</span>~<span class="string">"k"</span>之间的任意字母</span><br><span class="line"><span class="string">[^A-F0~3]</span>  匹配<span class="string">"A"</span>~<span class="string">"F"</span>,<span class="string">"0"</span>~<span class="string">"3"</span>之外的任意字符</span><br></pre></td></tr></table></figure>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">ab5@</span>]   匹配<span class="string">"a"</span>或<span class="string">"b"</span>或<span class="string">"5"</span>或<span class="string">"@"</span></span><br><span class="line">[<span class="meta">^abc</span>]   匹配<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>之外的任意一个字符</span><br><span class="line">[<span class="meta">f-k</span>]    匹配<span class="string">"f"</span>~<span class="string">"k"</span>之间的任意字母</span><br><span class="line">[<span class="meta">^A-F0~3</span>]  匹配<span class="string">"A"</span>~<span class="string">"F"</span>,<span class="string">"0"</span>~<span class="string">"3"</span>之外的任意字符</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>修饰匹配次数的特殊符号</p>
 <p>  无论是只能匹配一种字符的表达式，还是可以匹配多种字符其中任意一个的表达式，都只能匹配一次。如果使用表达式再加上修饰匹配次数的特殊符号，那么不用重复书写表达式就可以重复匹配。</p>
@@ -206,7 +212,7 @@
 </li>
 <li><p>其他一些代表抽象意义的特殊符号</p>
 <p>  一些符号在表达式中代表抽象的特殊意义：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">^    字符开始的地方匹配，不匹配任何字符</span><br><span class="line">$    字符串结束的地方匹配，不匹配任何字符</span><br><span class="line">\<span class="selector-tag">b</span>   匹配一个单词的边界，也就是单词和空格直接的位置，不匹配任何字符</span><br></pre></td></tr></table></figure>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">^    字符开始的地方匹配，不匹配任何字符</span><br><span class="line">$    字符串结束的地方匹配，不匹配任何字符</span><br><span class="line">\<span class="keyword">b </span>  匹配一个单词的边界，也就是单词和空格直接的位置，不匹配任何字符</span><br></pre></td></tr></table></figure>
 <p> 一些符号可以影响表达式内部子表达式之间的关系：</p>
 <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">|    左右两边表达式直接<span class="string">"或"</span>关系，匹配左边或者右边</span><br><span class="line">()   <span class="number">1.</span>在被修饰匹配次数时，括号内的表达式可以作为整体被修饰 <span class="number">2.</span>取匹配结果的时候，括号中的表达式匹配到的内容可以被单独得到</span><br></pre></td></tr></table></figure>
 </li>
@@ -249,7 +255,7 @@
 </article>
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2019/04/17/kubenetes集群环境/" class="pre-post btn btn-default" title="kubenetes集群环境">
+        <a href="/2019/04/17/kubenetes集群环境/" class="pre-post btn btn-default" title='kubenetes集群环境'>
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
             <span class="hidden-xs">
                 kubenetes集群环境
@@ -257,7 +263,8 @@
         </a>
         
             
-                <a href="/2019/04/15/Audio/" class="next-post btn btn-default" title="H5 Audio 对象介绍">
+                <a href="/2019/04/15/Audio/" class="next-post btn btn-default"
+                    title='H5 Audio 对象介绍'>
                     <span class="hidden-lg">下一篇</span>
                     <span class="hidden-xs">
                         H5 Audio 对象介绍

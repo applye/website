@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="zh-CN">
 
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
     <!--Setting-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -72,10 +72,11 @@
 <![endif]-->
 <body>
     
-<header class="main-header" style="background-image:url(
-    https://raw.githubusercontent.com/879733672/images/cdn/img/202209041626561.jpg)">
+<header class="main-header"  style="background-image:url(
+    https://raw.githubusercontent.com/879733672/images/cdn/img/202209041818975.jpg)"
+     >
     <div class="main-header-box">
-        <a class="header-avatar" href="/" title="xiao cheng">
+        <a class="header-avatar" href="/" title='xiao cheng'>
             <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
         </a>
         <div class="branding">
@@ -110,6 +111,11 @@
                         <li role="presentation" class="text-center">
                             <a href="/categories/前端/"><i class="fa "></i>
                                 前端</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/后端/"><i class="fa "></i>
+                                后端</a>
                         </li>
                         
                         <li role="presentation" class="text-center">
@@ -201,7 +207,7 @@
 <ol start="3">
 <li>初始化项目<br>首先创建一个空项目，暂时命名为 all-cli，然后新建一个 cli.js 文件，再执行 npm init 生成一个 package.json 文件。最后安装上面需要用到的依赖。</li>
 </ol>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">mkdir</span> all-<span class="keyword">cli</span> &amp;&amp; <span class="keyword">cd</span> all-<span class="keyword">cli</span></span><br><span class="line"></span><br><span class="line">npm init</span><br><span class="line"></span><br><span class="line">npm install commander download-git-repo inquirer handlebars ora chalk <span class="keyword">log</span>-symbols -<span class="built_in">S</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">mkdir</span> all-<span class="keyword">cli</span> &amp;&amp; <span class="keyword">cd</span> all-<span class="keyword">cli</span></span><br><span class="line"></span><br><span class="line">npm init</span><br><span class="line"></span><br><span class="line">npm install commander download-git-repo inquirer handlebars ora chalk <span class="keyword">log</span>-symbols -S</span><br></pre></td></tr></table></figure>
 <ol start="4">
 <li>处理命令行<br>node.js 内置了对命令行操作的支持，在 package.json 中的 bin 字段可以定义命令名和关联的执行文件。<br>所以现在 package.json 中加上 bin 的内容：<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"all-cli"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">  <span class="attr">"description"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="attr">"main"</span>: <span class="string">"index.js"</span>,</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"test"</span>: <span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"bin"</span>: &#123;</span><br><span class="line">    <span class="attr">"all-cli"</span>: <span class="string">"bin/cli.js"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"author"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="attr">"license"</span>: <span class="string">"ISC"</span>,</span><br><span class="line">  <span class="attr">"dependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"chalk"</span>: <span class="string">"^2.4.2"</span>,</span><br><span class="line">    <span class="attr">"commander"</span>: <span class="string">"^2.20.0"</span>,</span><br><span class="line">    <span class="attr">"download-git-repo"</span>: <span class="string">"^1.1.0"</span>,</span><br><span class="line">    <span class="attr">"handlebars"</span>: <span class="string">"^4.1.2"</span>,</span><br><span class="line">    <span class="attr">"inquirer"</span>: <span class="string">"^6.3.1"</span>,</span><br><span class="line">    <span class="attr">"log-symbols"</span>: <span class="string">"^3.0.0"</span>,</span><br><span class="line">    <span class="attr">"ora"</span>: <span class="string">"^3.4.0"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -214,7 +220,7 @@
 <figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env node</span></span><br><span class="line">const program = <span class="built_in">require</span>(<span class="string">'commander'</span>);</span><br><span class="line">const download = <span class="built_in">require</span>(<span class="string">'download-git-repo'</span>);</span><br><span class="line">program.version(<span class="string">'1.0.0'</span>, <span class="string">'-v, --version'</span>)</span><br><span class="line">       .command(<span class="string">'init &lt;name&gt;'</span>)</span><br><span class="line">       .action(<span class="function"><span class="params">(name)</span> =&gt;</span> &#123;</span><br><span class="line">           download(<span class="string">'gitlab:xx#master'</span>, name, &#123;clone: <span class="literal">true</span>&#125;, <span class="function"><span class="params">(err)</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(err ? <span class="string">'Error'</span> : <span class="string">'Success'</span>)</span><br><span class="line">           &#125;)</span><br><span class="line">       &#125;);</span><br><span class="line">program.parse(process.argv);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>命令行交互<br>命令行交互功能可以在用户执行 init 命令后，向用户提出问题，接收用户的输入并作出相应的处理。这里使用 inquirer.js 来实现。</p>
-<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const inquirer = <span class="built_in">require</span>(<span class="string">'inquirer'</span>);</span><br><span class="line">inquirer.prompt([</span><br><span class="line">    &#123;</span><br><span class="line">        type: <span class="string">'input'</span>,</span><br><span class="line">        name: <span class="string">'author'</span>,</span><br><span class="line">        message: <span class="string">'author'</span></span><br><span class="line">    &#125;</span><br><span class="line">]).<span class="keyword">then</span>(<span class="function"><span class="params">(answers)</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(answers.author);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> inquirer = <span class="built_in">require</span>(<span class="string">'inquirer'</span>);</span><br><span class="line">inquirer.prompt([</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">type</span>: <span class="string">'input'</span>,</span><br><span class="line">        name: <span class="string">'author'</span>,</span><br><span class="line">        message: <span class="string">'author'</span></span><br><span class="line">    &#125;</span><br><span class="line">]).then(<span class="function">(<span class="params">answers</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(answers.author);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>通过这里例子可以看出，问题就放在 prompt() 中，问题的类型为 input 就是输入类型，name 就是作为答案对象中的 key，message 就是问题了，用户输入的答案就在 answers 中，使用起来就是这么简单。更多的参数设置可以参考官方文档。<br>通过命令行交互，获得用户的输入，从而可以把答案渲染到模板中。</p>
@@ -253,7 +259,7 @@
 </article>
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2019/05/14/前端如何进行npm发布？/" class="pre-post btn btn-default" title="前端如何进行npm发布？">
+        <a href="/2019/05/14/前端如何进行npm发布？/" class="pre-post btn btn-default" title='前端如何进行npm发布？'>
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
             <span class="hidden-xs">
                 前端如何进行npm发布？
@@ -261,7 +267,8 @@
         </a>
         
             
-                <a href="/2019/04/20/IntersectionObserver介绍/" class="next-post btn btn-default" title="IntersectionObserver介绍">
+                <a href="/2019/04/20/IntersectionObserver介绍/" class="next-post btn btn-default"
+                    title='IntersectionObserver介绍'>
                     <span class="hidden-lg">下一篇</span>
                     <span class="hidden-xs">
                         IntersectionObserver介绍

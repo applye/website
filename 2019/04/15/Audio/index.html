@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="zh-CN">
 
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
     <!--Setting-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -75,10 +75,11 @@
 <![endif]-->
 <body>
     
-<header class="main-header" style="background-image:url(
-    https://raw.githubusercontent.com/879733672/images/cdn/img/202209041626561.jpg)">
+<header class="main-header"  style="background-image:url(
+    https://raw.githubusercontent.com/879733672/images/cdn/img/202209041626561.jpg)"
+     >
     <div class="main-header-box">
-        <a class="header-avatar" href="/" title="xiao cheng">
+        <a class="header-avatar" href="/" title='xiao cheng'>
             <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
         </a>
         <div class="branding">
@@ -113,6 +114,11 @@
                         <li role="presentation" class="text-center">
                             <a href="/categories/前端/"><i class="fa "></i>
                                 前端</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/后端/"><i class="fa "></i>
+                                后端</a>
                         </li>
                         
                         <li role="presentation" class="text-center">
@@ -183,7 +189,7 @@
             <h2 id="Audio-对象介绍"><a href="#Audio-对象介绍" class="headerlink" title="Audio 对象介绍"></a>Audio 对象介绍</h2><p><a href="http://www.w3school.com.cn/jsref/dom_obj_audio.asp" target="_blank" rel="noopener">详细AIP, 参w3school教程</a></p>
 <ol>
 <li><p>创建Audio对象，可以通过下面两种方式得到。</p>
-<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//方法一</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">id</span>=<span class="string">"music"</span> <span class="attr">src</span>=<span class="string">".map3"</span>&gt;</span>Your browser does not support it<span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span></span><br><span class="line"><span class="xml">	var audio = document.getElementById('#music');</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">	</span><br><span class="line">//方法二</span><br><span class="line">var audio = new Audio(<span class="string">'.map3'</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//方法一</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">id</span>=<span class="string">"music"</span> <span class="attr">src</span>=<span class="string">".map3"</span>&gt;</span>Your browser does not support it<span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="xml">	var audio = document.getElementById('#music');</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">	</span><br><span class="line">//方法二</span><br><span class="line">var audio = new Audio(<span class="string">'.map3'</span>);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>方法和属性介绍</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">audio.play();   <span class="comment">//开始播放</span></span><br><span class="line">audio.pause();  <span class="comment">//暂停</span></span><br><span class="line">audio.autoPlay = <span class="literal">true</span>/<span class="literal">false</span>  <span class="comment">//设置播放状态</span></span><br><span class="line"><span class="built_in">console</span>.log(audio.autoPlay);  <span class="comment">//获取播放状态</span></span><br><span class="line">audio.src    <span class="comment">//获取或者设置播放地址</span></span><br><span class="line">audio.volume = <span class="number">0.5</span>/<span class="number">1</span>  <span class="comment">//设置音量，最大为1,0为静音,获取音量</span></span><br><span class="line"><span class="built_in">console</span>.log(audio.volume);</span><br><span class="line">audio.loop = <span class="literal">true</span>  <span class="comment">//设置或者获取循环状态</span></span><br><span class="line"><span class="built_in">console</span>.log(audio.loop);</span><br><span class="line">audio.duration  <span class="comment">//获取音乐的长度，单位秒</span></span><br><span class="line">audio.currentTime  <span class="comment">//设置或者获取播放时间</span></span><br><span class="line">audio.ended   <span class="comment">//判断音乐是否播放完毕，只读属性</span></span><br><span class="line"></span><br><span class="line">事件</span><br><span class="line"></span><br><span class="line">playing</span><br><span class="line">当音乐开始播放，暂停后重新开始播放，设置currentTime后开始播放时触发</span><br><span class="line">audio.addEventListener(<span class="string">'playing'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'playing'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">pause</span><br><span class="line">当音乐暂停时和结束时触发</span><br><span class="line">audio.addEventListener(<span class="string">'pause'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'pause'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">ended</span><br><span class="line">当音乐结束时触发</span><br><span class="line">audio.addEventListener(<span class="string">'ended'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'ended'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">timeupdate</span><br><span class="line"><span class="comment">//当currentTime更新时会触发timeupdate事件。			</span></span><br><span class="line">audio.ontimeupdate = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> 	<span class="built_in">console</span>.log(<span class="string">'timeupdate'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">volumechange</span><br><span class="line">当音量改变时触发</span><br><span class="line">audio.onvolumechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'volumechange'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
@@ -206,7 +212,7 @@
 </article>
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2019/04/15/js正则表达式/" class="pre-post btn btn-default" title="javaScript 正则表达式">
+        <a href="/2019/04/15/js正则表达式/" class="pre-post btn btn-default" title='javaScript 正则表达式'>
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
             <span class="hidden-xs">
                 javaScript 正则表达式
@@ -214,7 +220,8 @@
         </a>
         
             
-                <a href="/2019/04/15/centos笔记/" class="next-post btn btn-default" title="Centos 笔记">
+                <a href="/2019/04/15/centos笔记/" class="next-post btn btn-default"
+                    title='Centos 笔记'>
                     <span class="hidden-lg">下一篇</span>
                     <span class="hidden-xs">
                         Centos 笔记

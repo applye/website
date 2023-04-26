@@ -1,0 +1,341 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="小橙">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="//website.cwzcfj.cn">
+    <!--SEO-->
+
+<meta name="keywords" content="pve">
+
+
+<meta name="description" content="pve 常见问题
+123456789apt update  // apt update 的作用是从/etc/apt/sources.list文件中定义的源中获取的最新的软件包列表。即运行 apt...">
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+<title>
+    
+    pve常见问题 |
+    
+    小橙
+</title>
+
+<link rel="alternate" href="/atom.xml" title="小橙" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+</head></html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    
+<header class="main-header"  style="background-image:url(
+    https://raw.githubusercontent.com/879733672/images/cdn/img/%E4%B8%8B%E8%BD%BD.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='xiao cheng'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                 
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="//website.cwzcfj.cn">
+                        小橙</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                首页</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/前端/"><i class="fa "></i>
+                                前端</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/后端/"><i class="fa "></i>
+                                后端</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/工具/"><i class="fa "></i>
+                                工具</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="pve常见问题">
+            
+                    pve常见问题
+                        
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/工具/">工具</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-link" href="/tags/pve/">pve</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2022/10/12</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+            
+                
+    </div>
+    
+        <div class="post-body post-content">
+            <h2 id="pve-常见问题"><a href="#pve-常见问题" class="headerlink" title="pve 常见问题"></a>pve 常见问题</h2><ul>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">apt <span class="keyword">update</span>  // apt <span class="keyword">update</span> 的作用是从/etc/apt/sources.list文件中定义的源中获取的最新的软件包列表。即运行 apt <span class="keyword">update</span> 并没有更新软件，而是相当 windows 下面的检查更新，获取的是软件的状态。</span><br><span class="line">apt <span class="keyword">upgrade</span> // 则是根据 updare 命令获取的最新的软件包列表，去真正地更新软件</span><br><span class="line">apt dis-<span class="keyword">upgrade</span> // 可以聪明的解决相依性的问题，如果相依性问题，需要安装/移除新的 <span class="keyword">Package</span> ，就会试着去安装它。（所以通常 dis-<span class="keyword">upgrade</span> 会被认为是有点风险的升级）</span><br><span class="line"></span><br><span class="line"><span class="keyword">update</span> ,然后才能运行 <span class="keyword">upgrade</span> 和 dist-<span class="keyword">upgrade</span> ,因为相当与 <span class="keyword">update</span> 命令获取了包的一些信息，比如大小和版本号，然后在运行 <span class="keyword">upgrade</span> 去下载包，如果没有获取包的信息，那么 <span class="keyword">upgrade</span> 就是无效</span><br><span class="line"></span><br><span class="line">apt <span class="keyword">list</span> <span class="comment">--upgradable  // 查看可以更新的包</span></span><br><span class="line">apt <span class="keyword">update</span> &amp;&amp; apt <span class="keyword">upgrade</span> -y 执行软件包数据库更新</span><br><span class="line">apt <span class="keyword">install</span> -f  // 命令可修复依赖关系,假如有软件因依赖关系不满足而无法安装,就可以运行此命令自动修复安装程序包所依赖的包</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cat</span> /etc/apt/sources.<span class="keyword">list</span>   <span class="comment">// 查当前镜像源配置</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>PVE 虚拟机在一次重启后web打开一片空白，并非打不开，而是不显示任何东西。使用F12打开开发者工具，可以看到如下信息:<br><img src="https://cdn.jsdelivr.ren/gh/879733672/images@cdn/img/202210122315506.png" alt><br>关键信息：<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">no</span> such <span class="keyword">file</span> <span class="string">'/PVE/StdWorkspace.js'</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>解决办法<br>升级浏览器版本内核，chrome&gt;80, 如果不行在执行下列命令<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">apt update &amp;&amp; apt upgrade</span><br><span class="line">apt install -f</span><br><span class="line"></span><br><span class="line">apt dist-upgrade</span><br><span class="line">pvecm updatecerts --force</span><br><span class="line">server pveproxy restart</span><br></pre></td></tr></table></figure></p>
+<h3 id="更换源"><a href="#更换源" class="headerlink" title="更换源"></a>更换源</h3><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">## 进入系统软件源配置文件目录</span></span><br><span class="line">cd /etc/apt</span><br><span class="line"></span><br><span class="line"><span class="meta">## 将默认软件源配置文件进行备份</span></span><br><span class="line"><span class="keyword">cp</span> sources<span class="meta">.list</span> sources<span class="meta">.list</span>.bak</span><br></pre></td></tr></table></figure>
+<p>这里我将使用中国科技大（USTC）的镜像仓库进行替换，使用如下命令：</p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 替换系统软件仓库</span></span><br><span class="line"></span><br><span class="line">sed -i 's|<span class="string">^deb http://ftp.debian.org</span>|<span class="string">deb https://mirrors.ustc.edu.cn</span>|<span class="string">g' /etc/apt/sources.list</span></span><br><span class="line"></span><br><span class="line"><span class="string">sed -i 's</span>|<span class="string">^deb http://security.debian.org</span>|<span class="string">deb https://mirrors.ustc.edu.cn/debian-security</span>|<span class="string">g' /etc/apt/sources.list</span></span><br></pre></td></tr></table></figure>
+<p>执行完成后，检查是否执行正确：<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">## 输出系统源配置文件，检查是否正确</span><br><span class="line"><span class="keyword">cat</span> /etc/apt/sources.<span class="keyword">list</span></span><br><span class="line">如果输出结果中有 USTC 的镜像地址，则表示命令已经正确执行：</span><br><span class="line"></span><br><span class="line">## 输出内容参考：</span><br><span class="line"></span><br><span class="line"><span class="keyword">deb</span> http<span class="variable">s:</span>//mirrors.ustc.edu.<span class="keyword">cn</span>/debian bullseye main contrib</span><br><span class="line"></span><br><span class="line"><span class="keyword">deb</span> http<span class="variable">s:</span>//mirrors.ustc.edu.<span class="keyword">cn</span>/debian bullseye-updates main contrib</span><br><span class="line"></span><br><span class="line"># security updates</span><br><span class="line"><span class="keyword">deb</span> http<span class="variable">s:</span>//mirrors.ustc.edu.<span class="keyword">cn</span>/debian-security bullseye-security main contrib</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 清理</span></span><br><span class="line">apt clean &amp;&amp; apt autoclean</span><br><span class="line"></span><br><span class="line"><span class="comment">## 同步镜像仓库</span></span><br><span class="line">apt <span class="keyword">update</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## apt 命令显示已安装软件包</span></span><br><span class="line">apt <span class="keyword">list</span> –installed</span><br><span class="line"></span><br><span class="line"><span class="comment">## dpkg 命令显示已安装软件包:</span></span><br><span class="line">dpkg-<span class="keyword">query</span> -l</span><br><span class="line"></span><br><span class="line"><span class="comment">## 列出系统里 Snap 已安装软件包:</span></span><br><span class="line">snap <span class="keyword">list</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## Flatpak 已安装软件包:</span></span><br><span class="line">flatpak <span class="keyword">list</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">apt-<span class="keyword">get</span> 命令</span><br><span class="line"><span class="comment">## 更新安装源（Source）</span></span><br><span class="line">apt-<span class="keyword">get</span> <span class="keyword">update</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 更新已安装的软件包</span></span><br><span class="line">apt-<span class="keyword">get</span> <span class="keyword">upgrade</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 更新已安装的软件包（识别并处理依赖关系的改变）</span></span><br><span class="line">apt-<span class="keyword">get</span> dist-<span class="keyword">upgrade</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 删除软件包, 保留配置文件</span></span><br><span class="line">apt-<span class="keyword">get</span> remove PackageName</span><br><span class="line"></span><br><span class="line"><span class="comment">## 删除软件包, 同时删除配置文件</span></span><br><span class="line">apt-<span class="keyword">get</span> <span class="comment">--purge remove PackageName</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 清除 已下载的软件包 和 旧软件包</span></span><br><span class="line">apt-<span class="keyword">get</span> clean &amp;&amp; apt-<span class="keyword">get</span> autoclean</span><br><span class="line"></span><br><span class="line"><span class="comment">## 修复依赖关系</span></span><br><span class="line">apt-<span class="keyword">get</span> -f <span class="keyword">install</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 普通安装</span></span><br><span class="line">apt-<span class="keyword">get</span> <span class="keyword">install</span> PackageName</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 列出已安装的所有软件包</span></span><br><span class="line">dpkg -l</span><br><span class="line"></span><br><span class="line"><span class="comment">## 搜索软件包</span></span><br><span class="line">apt-<span class="keyword">cache</span> <span class="keyword">search</span> PackageName</span><br><span class="line"></span><br><span class="line"><span class="comment">## 检查是否有损坏的依赖</span></span><br><span class="line">apt-<span class="keyword">get</span> <span class="keyword">check</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">### pve目录</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> iso镜像目录 /<span class="keyword">var</span>/lib/vz/<span class="keyword">template</span>/iso</span><br><span class="line"><span class="keyword">local</span>-lvm存储镜像，位置在/dev/pve</span><br><span class="line"></span><br><span class="line">find / -<span class="keyword">name</span> DS918_7<span class="number">.1</span><span class="number">.0</span><span class="number">-42661.</span>img  // 查找文件命令</span><br><span class="line">qm importdisk <span class="number">101</span> /<span class="keyword">var</span>/lib/vz/<span class="keyword">template</span>/iso/DS918_7<span class="number">.1</span><span class="number">.0</span><span class="number">-42661.</span>img <span class="keyword">local</span>-lvm  // 导入镜像</span><br></pre></td></tr></table></figure>
+<h3 id="设置硬盘直通"><a href="#设置硬盘直通" class="headerlink" title="设置硬盘直通"></a>设置硬盘直通</h3><p>ls /dev/disk/by-id<br>ata-ST1000LM035-1RK172_ZDE5PT0X-part2</p>
+<p>qm set 虚拟机ID -sata1 /dev/disk/by-id/硬盘识别符</p>
+<p><img src="https://cdn.jsdelivr.net/gh/879733672/images@cdn/img/202211051736096.png" alt><br>ata1代表的是未占用的id数，因为sata0刚刚被我们引导盘（也就是电脑自带硬盘占用了），当然你也可以设置成其它的，PVE支持satat0-5。当出现上图那样“update”的时候，就说明硬盘直通成功！<br><img src="https://cdn.jsdelivr.net/gh/879733672/images@cdn/img/202211051737040.png" alt></p>
+<p>回到PVE虚拟机系统，点击我们创建的虚拟机ID，在硬件里面就可以看到多出来一个“硬盘（sata1）”，它就是我们挂载进来的直通硬盘。如下图：<br><img src="https://cdn.jsdelivr.net/gh/879733672/images@cdn/img/202211051740782.png" alt></p>
+<p>格式化分区：<br>lsblk:查看分区<br>格式化分区<br>mkfs.ext4 /dev/sda</p>
+<p>lsblk:查看分区是否挂载完成<br>// 创建分区<br>fdisk /dev/sda<br>// 格式化分区<br>mkfs -t ext4 /dev/sda1 </p>
+<p>手动挂载分区<br>mount /dev/sda3 /mnt/sda3<br>mount /dev/sda4 /mnt/sda4<br>mount /dev/sda5 /mnt/sda5</p>
+<p>二、开启直通<br>1、修改 /etc/default/grub<br>默认<br>GRUB_CMDLINE_LINUX_DEFAULT=”quiet”<br>只开启 PCIE (网卡或SATA控制器)的直通功能，即 IOMMU 分组<br>GRUB_CMDLINE_LINUX_DEFAULT=”quiet intel_iommu=on pcie_acs_override=downstream”<br>并打开核显直通功能。N5105核显无法直通且可以用来主系统或者LXC容器硬解，所以只开启 PCIE 直通。<br>GRUB_CMDLINE_LINUX_DEFAULT=”quiet intel_iommu=on video=efifb:off,vesafb:off pcie_acs_override=downstream”<br>2、更新grub<br>update-grub</p>
+<ol start="3">
+<li>重启<br>reboot</li>
+<li>查看是否成功，有输出代表成功<br>dmesg |grep -e DMAR -e IOMM</li>
+</ol>
+<p><a href="https://www.bilibili.com/read/cv17670431" target="_blank" rel="noopener">地址</a></p>
+<p><a href="https://post.smzdm.com/p/ar6k3m8w/?zdm_ss=Android_5648142893_&amp;send_by=5648142893&amp;from=other&amp;invite_code=zdm7mdve9ninv/" target="_blank" rel="noopener">分区设置</a></p>
+<p><a href="https://post.smzdm.com/p/a9gvp557/" target="_blank" rel="noopener">教程</a></p>
+<p>mstsc // windows打开远程链接 </p>
+<p><a href="https://post.smzdm.com/p/alxom300/" target="_blank" rel="noopener">https://post.smzdm.com/p/alxom300/</a></p>
+<p><a href="https://flybace.com/5644.html" target="_blank" rel="noopener">https://flybace.com/5644.html</a></p>
+<p>PVE下安装Windows10并直通核显、键盘鼠标、声卡等设备详细步骤<br><a href="https://www.simaek.com/archives/69/" target="_blank" rel="noopener">https://www.simaek.com/archives/69/</a></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">查询是否自启动</span><br><span class="line">systemctl list-unit-files</span><br><span class="line"></span><br><span class="line">查询所有已启动服务	</span><br><span class="line">systemctl list-units --type=service</span><br><span class="line"></span><br><span class="line">使某服务自动启动</span><br><span class="line">systemctl enable   httpd.service</span><br><span class="line"></span><br><span class="line">使某服务不自动启动		</span><br><span class="line">systemctl disable httpd.service</span><br><span class="line"></span><br><span class="line">启动某服务</span><br><span class="line">systemctl start httpd.service</span><br><span class="line"></span><br><span class="line">停止某服务</span><br><span class="line">systemctl stop httpd.service</span><br><span class="line"></span><br><span class="line">重启某服务</span><br><span class="line">systemctl restart httpd.service</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> shutdown也是关机命令，其语法格式：</span><br></pre></td></tr></table></figure>
+<p>  shutdown [option] [时间] [消息内容]<br>  <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="deletion">-k ： 并不是真的关机，只发送警告信息给登录用户</span></span><br><span class="line"><span class="deletion">-r ： 在将系统的所有服务关闭之后立刻重新启动系统</span></span><br><span class="line"><span class="deletion">-h ： 将系统的所有服务关闭之后 ，立刻关机</span></span><br><span class="line"><span class="deletion">-c ： 取消已经在进行的 shutdown 命令操作</span></span><br><span class="line">时间 ：指定系统关机的时间 ！若没有这个参数，系统默认 1 分钟后自动执行shutdown操作</span><br></pre></td></tr></table></figure></p>
+<p>shutdown -h now                                    立即关机<br>shutdown -h +10                                    10分钟后关机<br>shutdown -h 20:00                                20:00分点关机<br>shutdown -r now                                 立刻重启(root用户使用)<br>shutdown -r 10                                     过10分钟自动重启(root用户使用)<br>shutdown -r 20:35                                 在时间为20:35时候重启(root用户使用)<br>shutdown -c                                        取消上一次所做的命令<br>shutdown -k “I will shutdown the systemc”        发送警告信息给其他用户<br>shutdown -h +10 “I will shutdown the systemc”   10分钟后关机并发送提示消息<br><code>`</code></p>
+
+        </div>
+        
+                    <div class="post-footer">
+                        <div>
+                            
+                                转载声明：
+                                    商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="https://github.com/879733672" target="_blank">小橙</a>
+                                        
+                                            
+                        </div>
+                        <div>
+                            
+                        </div>
+                    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2023/04/02/jwt使用教程/" class="pre-post btn btn-default" title='jwt使用教程'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">
+                jwt使用教程
+            </span>
+        </a>
+        
+            
+                <a href="/2022/10/12/python/" class="next-post btn btn-default"
+                    title='python爬虫之scrapy使用教程'>
+                    <span class="hidden-lg">下一篇</span>
+                    <span class="hidden-xs">
+                        python爬虫之scrapy使用教程
+                    </span><i class="fa fa-angle-right fa-fw"></i>
+                </a>
+                
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#pve-常见问题"><span class="toc-text">pve 常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#更换源"><span class="toc-text">更换源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置硬盘直通"><span class="toc-text">设置硬盘直通</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+    访问量:
+    <strong id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    &nbsp; | &nbsp;
+    访客数:
+    <strong id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2019
+                    
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/assets/tagcanvas.min.js?rev=2.9"></script>
+<script>
+var tagOption = {
+    textColour: '#444', // 字体颜色
+    outlineMethod: 'block', // 选中模式
+    outlineColour: '#FFDAB9', // 选中模式的颜色
+    interval: 30 || 30, // 动画帧之间的时间间隔，值越大，转动幅度越大
+    textHeight: 13,
+    outlineRadius: 3,
+    freezeActive: true || '', // 选中的标签是否继续滚动
+    frontSelect: true || '', // 不选标签云后部的标签
+    initial: [0.1, -0.1],
+    depth: 0.5,
+    decel: 0.95,
+    maxSpeed: 0.03,
+    reverse: true || '', // 是否反向触发
+    fadeIn: 500, // 进入动画时间
+    wheelZoom: false || '' // 是否启用鼠标滚轮
+}
+TagCanvas.Start('tag-cloud-3d', '', tagOption);
+</script>
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="/js/app.js?rev=@@hash"></script>
+</body>
+</html>
