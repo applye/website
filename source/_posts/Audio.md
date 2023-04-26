@@ -8,7 +8,7 @@ tags:
   - 'audio'
 comments: false
 date: 2019-04-15 23:47:20
-img: 'https://raw.githubusercontent.com/879733672/images/cdn/img/202209041724520.jpg'
+img: 'https://cdn.jsdelivr.ren/gh/879733672/images@cdn/img/202209041724520.jpg'
 ---
 
 ## Audio 对象介绍

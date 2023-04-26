@@ -1,7 +1,4 @@
 ---
-abbrlink: 9
----
----
 abbrlink: 1
 title: React-native之开源Tab导航组件
 categories: '前端'
@@ -10,8 +7,9 @@ tags:
   - 'react-native'
 comments: false
 date: 2019-04-15 22:12:38
-img: 'https://raw.githubusercontent.com/879733672/images/cdn/img/202209041737718.jpg'
-## React-native之开源Tab导航组件	
+img: 'https://cdn.jsdelivr.ren/gh/879733672/images@cdn/img/202209041737718.jpg'
+---
+## React-native之开源Tab导航组件
 
 ### 简介
 大多数应用都会有导航进行页面切换，React Native原生的控件仅有TabBarIOS可供iOS平台使用，如果想同时适配Android和IOS,最好使用第三方控件，比如:react-native-tab-navigator

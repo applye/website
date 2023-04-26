@@ -7,7 +7,7 @@ tags:
 comments: false
 abbrlink: 41019
 date: 2019-04-20 20:07:14
-img: 'https://raw.githubusercontent.com/879733672/images/cdn/img/202209041659262.jpg'
+img: 'https://cdn.jsdelivr.ren/gh/879733672/images@cdn/img/202209041659262.jpg'
 ---
 ### markdown简介
 Markdown 的目标是实现「易读易写」。

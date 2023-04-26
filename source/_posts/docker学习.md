@@ -7,7 +7,7 @@ tags:
 comments: false
 abbrlink: 29609
 date: 2019-04-19 22:24:14
-img: 'https://raw.githubusercontent.com/879733672/images/cdn/img/202209041711064.jpg'
+img: 'https://cdn.jsdelivr.ren/gh/879733672/images@cdn/img/202209041711064.jpg'
 ---
 ## docker 简介
 2013年发布至今，docker一直广受瞩目，被认为可能会改变软件行业。

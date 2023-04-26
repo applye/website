@@ -8,7 +8,7 @@ tags:
   - '环境搭建'
 comments: false
 date: 2019-04-15 23:37:40
-img: 'https://raw.githubusercontent.com/879733672/images/cdn/img/202209041726156.jpg'
+img: 'https://cdn.jsdelivr.ren/gh/879733672/images@cdn/img/202209041726156.jpg'
 ---
 ## Centos使用笔记
 

@@ -14,7 +14,7 @@
   },
   "homepage": "website.cwzcfj.cn",
   "hexo": {
-    "version": "3.8.0"
+    "version": "3.9.0"
   },
   "dependencies": {
     "ejs": "^2.6.1",

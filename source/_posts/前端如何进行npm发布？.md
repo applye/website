@@ -7,7 +7,7 @@ tags:
 comments: false
 abbrlink: 4020
 date: 2019-05-14 22:50:16
-img: 'https://raw.githubusercontent.com/879733672/images/cdn/img/202209041646159.jpg'
+img: 'https://cdn.jsdelivr.ren/gh/879733672/images@cdn/img/202209041646159.jpg'
 ---
 
 ### 前端npm包发布

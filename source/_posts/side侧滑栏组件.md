@@ -4,7 +4,7 @@ title: React Native 第三方组件react-native-side-menu -侧滑栏使用
 categories: 前端
 tags: ['React Native','前端']
 comments: false
-img: 'https://raw.githubusercontent.com/879733672/images/cdn/img/202209041638827.jpg'
+img: 'https://cdn.jsdelivr.ren/gh/879733672/images@cdn/img/202209041638827.jpg'
 ---
 ## React Native 第三方组件react-native-side-menu -侧滑栏使用
 ### 简介
