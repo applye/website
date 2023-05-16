@@ -6,7 +6,7 @@ tags:
 comments: false
 abbrlink: 64096
 date: 2022-10-12 22:13:11
-img: 'https://cdn.jsdelivr.ren/gh/879733672/images@cdn/img/202304262057411.png'
+img: 'https://raw.githubusercontent.com/879733672/images/cdn/img/202304262057411.png'
 ---
 
 ## pve 常见问题
@@ -28,7 +28,7 @@ cat /etc/apt/sources.list   // 查当前镜像源配置
 ```
 
 - PVE 虚拟机在一次重启后web打开一片空白，并非打不开，而是不显示任何东西。使用F12打开开发者工具，可以看到如下信息:
-![](https://cdn.jsdelivr.ren/gh/879733672/images@cdn/img/202210122315506.png)
+![](https://raw.githubusercontent.com/879733672/images/cdn/img/202210122315506.png)
 关键信息：
 ```
 no such file '/PVE/StdWorkspace.js'

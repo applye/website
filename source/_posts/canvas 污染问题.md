@@ -1,0 +1,104 @@
+---
+abbrlink: 11
+title: canvas 污染问题
+categories: 前端
+tags:
+    - 'canvas'
+    - 'js'
+comments: false
+date: 2019-04-15 23:47:20
+img: 'https://raw.githubusercontent.com/879733672/images/cdn/img/202304282108246.png'
+---
+
+## canvas 污染问题
+
+### canvas 问题介绍
+
+前端时间实现了一个用 canvas 往模板图片绘制数据的功能点，遇到了一个跨域引起 canvas 污染的问题，仔细发掘下去发现不少的技术点。
+
+### tainted canvas
+
+对于 canvas 污染的问题，这应该是非常常见的在处理跨域资源时会遇到的问题。
+
+一般来说，利用 canvas 绘制图像的时候需要执行以下步骤:
+
+1. 创建 canvas 元素；
+2. 获取 canvas 元素的二维渲染上下文对象；
+3. 创建 Image 对象并加载；
+4. 等待图像加载完成的时候绘制在 canvas 上
+
+```
+const canvas = document.createElement("canvas");
+const ctx = canvas.getContext("2d");
+
+const img = new Image();
+img.src = 'xxxx';
+img.onload = () => {
+    canvas.width = img.width;
+  canvas.height = img.height;
+
+  canvas.drawImage(img, 0, 0);
+}
+```
+
+当使用 drawImage 方法绘制一个不同源的图像时，此时并不会报错，但是 canvas 会变成 tainted （被污染），之后如果在当前被污染的 canvas 上调用以下方法时就会抛出 SecurityError 的错误。
+
+> HTMLCanvasElement.toDataURL()  
+> HTMLCanvasElement.toBlob()
+> CanvasRenderingContext2D.getImageData()
+
+> Uncaught SecurityError: Failed to execute 'toDataURL' on 'HTMLCanvasElement': Tainted canvases may not be exported.
+> Uncaught SecurityError: Failed to execute 'getImageData' on 'CanvasRenderingContext2D': The canvas has been tainted by cross-origin data.
+
+### 为什么会出现 tainted canvas?
+
+ainted canvas 其实还是牵扯到浏览器同源策略的限制问题，一般来说这个问题在使用 XMLHttpRequest 或者 Fetch 发起网络请求的情况比较多见，而在这里的目的是禁止使用 canvas 随意从另一个网站加载图片再转换成数据的强盗行为。
+
+这看起来合情合理，但是现在大型网站一般都会走 CDN 服务器来缓存并代理资源访问，这就导致在动态加载图像的时候实际可能走的是 CDN 服务器域名，这就导致网页域名和资源域名不同源了。本来防别人的，这下连自己人也堵在外面了。
+
+### 如何解决 tainted canvas 问题?
+
+要解决 canvas 污染的问题，需要 CORS + crossOrign 两步配置：
+
+1. 配置服务端响应头支持跨域请求的域名，请求方法等；
+
+    服务端 CORS 的配置通常需要后端设置响应头。
+
+2. 设置 crossorigin 属性
+
+    HTML 规范给 crossorigin 制定了三个允许值
+
+    - anonymous 或""（空字符串）：匿名请求访问资源，不会在跨域请求的时候携带任何身份凭据；
+    - use-credentials：在跨域请求的时候携带身份凭据，仅当服务端响应头返回 Access-Control-Allow-Credentials: true 的时候才允许使用跨域资源
+
+crossorigin 无论设置成哪一个值都会指定浏览器以跨域的模式请求资源，去发送相关 CORS 相关的请求头，并通过检查服务端是否返回 Access-Control-Allow-Orgin 等响应头来判断用户是否有权限完全访问响应内容。但是为了客户端安全考虑，一般设置成 anonymous 更为合适，避免向陌生的服务端发送网页的 cookie 等身份数据。
+
+放在 canvas 绘制 image 的代码里可以这样修改：
+
+```
+const canvas = document.createElement("canvas");
+const ctx = canvas.getContext("2d");
+
+const img = new Image();
+img.src = 'xxxx';
+img.crossOrigin = 'anonymous';
+img.onload = () => {
+  canvas.width = img.width;
+  canvas.height = img.height;
+  canvas.drawImage(img, 0, 0);
+}
+```
+
+如果是 img 标签可以增加 crossorigin 属性：
+
+```
+<img src="xxx" crossorigin="anonymous" />
+```
+
+以下资源可能也需要 crossorigin 来取得数据访问权：
+
+| 元素              | 限制                                         |
+| ----------------- | -------------------------------------------- |
+| img, audio, video | 当它们被放在 canvas 元素内部使用时           |
+| script            | 使用 window.onerror                          |
+| link              | 加载 webmanifest 时必须添加 crossorigin 属性 |

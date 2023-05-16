@@ -8,7 +8,7 @@ tags:
 comments: false
 abbrlink: 50923
 date: 2019-04-17 21:59:27
-img: 'https://cdn.jsdelivr.ren/gh/879733672/images@cdn/img/202208282225766.jpg'
+img: 'https://raw.githubusercontent.com/879733672/images/cdn/img/202208282225766.jpg'
 ---
 
 ## Minikube 安装

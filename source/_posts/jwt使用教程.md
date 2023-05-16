@@ -8,7 +8,7 @@ tags:
 comments: false
 abbrlink: 8816
 date: 2023-04-02 21:31:52
-img: 'https://cdn.jsdelivr.ren/gh/879733672/images@cdn/img/202304262137347.png'
+img: 'https://raw.githubusercontent.com/879733672/images/cdn/img/202304262137347.png'
 ---
 
 ## jwt简介

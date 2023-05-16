@@ -8,7 +8,7 @@ tags:
 comments: false
 abbrlink: 36207
 date: 2019-04-20 21:33:12
-img: 'https://cdn.jsdelivr.ren/gh/879733672/images@cdn/img/202209041650625.jpg'
+img: 'https://raw.githubusercontent.com/879733672/images/cdn/img/202209041650625.jpg'
 ---
 ## IntersectionObserver简介
 在移动端，有个很重要的概念，叫做懒加载，适用于一些图片资源特别多，ajax数据特别多的页面中，经常会有动态加载数据的场景中，这个时候，我们通常是使用监听scroll或者使用setInterval来判断，元素是否进入视图，其中scroll由于其特别大的计算量，会有性能问题，而setInterval由于其有间歇期，也会出现体验问题。

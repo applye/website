@@ -7,7 +7,7 @@ tags:
 comments: false
 abbrlink: 60491
 date: 2023-04-16 21:52:19
-img: 'https://cdn.jsdelivr.ren/gh/879733672/images@cdn/img/202304262158732.png'
+img: 'https://raw.githubusercontent.com/879733672/images/cdn/img/202304262158732.png'
 ---
 
 ## JavaScript算法与数据结构_基础算法

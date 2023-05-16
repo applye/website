@@ -1,20 +1,114 @@
 ---
 abbrlink: 7
-title: Centos 笔记
+title: Linux使用教程
 categories: 工具
 tags:
   - '工具'
-  - 'centos7'
+  - 'Linux'
   - '环境搭建'
 comments: false
 date: 2019-04-15 23:37:40
-img: 'https://raw.githubusercontent.com/879733672/images/cdn/img/202209041726156.jpg'
+img: 'https://raw.githubusercontent.com/879733672/images/cdn/img/202304282219385.png'
 ---
-## Centos使用笔记
+## Linux使用教程
 
-### Centos6忘记密码解决办法，root和普通用户均可?
 
-参考地址: <a href="http://www.cnblogs.com/ljmjjy0820/p/6129893.html" target="_blank">http://www.cnblogs.com/ljmjjy0820/p/6129893.html</a>
+### 介绍
+一般来说著名的 Linux 系统基本上分两大类：
+RedHat 系列：Redhat、Centos、Fedora 等
+Debian 系列：Debian、Ubuntu 等  
+
+```
+uname -a | cat /etc/issue
+```
+
+
+RedHat 系列
+
+* 常见的安装包格式 rpm包,安装rpm包的命令是“rpm -参数”
+* 包管理工具 yum
+* 支持tar包
+
+Debian系列
+
+常见的安装包格式 deb包,安装deb包的命令是“dpkg -参数”
+包管理工具 apt-get
+支持tar包
+
+tar 只是一种压缩文件格式，它只是把文件压缩打包而已。 rpm 相当于windows中的安装文件，它会自动处理软件包之间的依赖关系。
+优缺点来说，rpm一般都是预先编译好的文件，它可能已经绑定到某种CPU或者发行版上面了。
+tar一般包括编译脚本，你可以在你的环境下编译，所以具有通用性。
+如果你的包不想开放源代码，你可以制作成rpm，如果开源，用tar更方便了。
+tar一般都是源码打包的软件，需要自己解包，然后进行安装三部曲，./configure, make, make install. 来安装软件。
+安装rpm包的命令是“rpm -参数”，安装deb包的命令是“dpkg -参数”。而linux系统很方便和人性化的一点就是很多软件或服务根本就不用我们去下载，直接使用相应的命令就可以管理了，可能这就是传说中的 “云”的概念。
+
+
+### Linux服务管理的两种方式service和systemctl
+* service
+service命令其实是去/etc/init.d目录下, 去执行相关程序， init.d目录包含许多系统各种服务的启动和停止脚本。当Linux启动，会寻找这些目录中的服务脚本，并根据脚本的run level确定不同的启动级别。
+
+service常用的方式：
+```
+service <service> // 打印指定服务<service>的命令行使用帮助
+service <service> start // 启动指定的系统服务<service>
+service <service> stop // 停止指定的系统服务<service>
+service <service> restart // service <service> restart
+chkconfig --list  // 查看系统服务列表，以及每个服务的运行级别。
+chkconfig <service> on // 设置指定服务<service>开机时自动启动。
+chkconfig <service> off // 设置指定服务<service>开机时不自动启动。
+ntsysv // 以全屏幕文本界面设置服务开机时是否自动启动。
+
+service redis start  // 打开redis命令 
+service redis stop  // 关闭redis命令
+chkconfig redis on  // 设为开机启动
+chkconfig redis off  // 设为开机关闭
+```
+
+* systemctl
+systemctl是一个systemd工具，主要负责控制systemd系统和服务管理器, 在systemed管理体系中，被管理的deamo(守护进程)称作unit单元, 对于单元的管理是通过命令systemctl来进行控制的，unit表示不同的systemd对象，通过配置文件进行标识和配置；文件主要包括系统服务，监听socket、保存的系统快照以及其它与init相关的信息。
+用service来管理服务时，是在/etc/init.d目录下创建一个脚本文件，来管理服务的启动和停止；在systemctl中，也类似，文件的目录有所不同.
+(1) 在/lib/systemd/system目录下创建一个脚本文件redis.service
+![](https://raw.githubusercontent.com/879733672/images/cdn/img/202210141029059.png)
+(2) 创建软链接(创建软链接是为了下一步系统初始化时自动启动服务)
+ln -s /lib/systemd/system/redis.service /etc/systemd/system/multi-user.target.wants/redis.service
+(3) 刷新配置
+sudo systemctl daemon-reload
+(4) 启动
+systemctl start redis
+
+```
+sudo systemctl daemon-reload  // 刷新配置 刚刚配置的服务需要让systemctl能识别，就必须刷新配置
+redis:systemctl start redis  // 启动
+redis:systemctl restart redis // 重启
+redis: systemctl stop redis  // 停止
+开机自启动redis服务加入开机启动:systemctl enable redis
+禁止开机启动:systemctl disable redis
+查看状态:systemctl status redis
+```
+
+### Linux命令
+```
+# systemctl status sshd   // 查看ssh服务是否启动
+# systemctl start sshd    // 启动
+# netstat -lnput |grep :22  // 查看端口号
+# lsof -i:22   // 查看端口号
+# kill -9 PID  // 命令杀死进程
+
+// 执行sh脚本
+# chmod +x hello.sh
+# ./home/test/shell/hello.sh
+# /home/test/shell/hello.sh
+# sh /home/test/shell/hello.sh
+
+// 查看服务是否启动命令
+ps -ef | grep nginx
+lsof -i:端口号
+systemctl status 服务名 | service 服务名 status
+
+// 查看开启的端口
+netstat -tnlp命令
+ps -ef|grep ttnode  // 查看是否运行
+```
 
 1. 连接ssh
 ```
@@ -103,93 +197,6 @@ img: 'https://raw.githubusercontent.com/879733672/images/cdn/img/202209041726156
 	yum install epel-release -y
 ```
 yum命令
-
-1. 替换源
-```
-centos8.5版本
-curl -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-8.repo
-
-yum -y install wget
-使用root用户，进入/etc/yum.repos.d/目录
-CentOS-Linux-BaseOS.repo是centos8.5的基础源，先将它备份一下，如果更新阿里源不成功还可以回退。
-# mv CentOS-Linux-BaseOS.repo CentOS-Linux-BaseOS.repo.bac
-# wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-8.repo
-# 重命名Centos-8.repo
-# mv CentOS-Base.repo CentOS-Linux-BaseOS.repo
-
-注释掉failovermethod.
- sed -i -e 's/failovermethod/#failovermethod/g' /etc/yum.repos.d/CentOS-Linux-BaseOS.repo
-如果你使用的不是阿里云的机器，在源中删除mirrors.cloud.aliyuncs.com和mirrors.aliyuncs.com。
- sed -i -e '/mirrors.cloud.aliyuncs.com/d' -e '/mirrors.aliyuncs.com/d' /etc/yum.repos.d/CentOS-Linux-BaseOS.repo
-
-生成缓存
-yum makecache
-```
-centos8于2021年年底停止了服务，大家再在使用yum源安装时候，出现下面错误“错误：Failed to download metadata for repo ‘AppStream’: Cannot prepare internal mirrorlist: No URLs in mirrorlist”
-
-进入yum的repos目录
-```
-cd /etc/yum.repos.d/
-
-sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
-sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
-
-生成缓存
-yum makecache
-
-运行 yum update 
-yum update
-```
-
-centos7
-* 查看ip, 修改ip
-```
-# ip addr
-
-# cd /etc/sysconfig/network-scripts
-vi ifcfg-eth0
-
-- 动态获取IP地址需要修改两处地方即可
-1. bootproto=dhcp
-2. onboot=yes
-
-
-
-- 配置静态IP地址
-1. bootproto=static
-
-2. onboot=yes
-
-3. 在最后加上几行，IP地址、子网掩码、网关、dns服务器
-IPADDR=192.168.1.160
-NETMASK=255.255.255.0
-GATEWAY=192.168.1.1
-DNS1=114.114.114.114
-DNS2=8.8.8.8
-
-- 重启网络
-systemctl restart network
-```
-
-* 更新源
-```
-
-1.安装wget
-yum install -y wget
-2.备份配置文件
-mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak
-3.下载国内yum源文件（centOs7，比如阿里）
-wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
-或者
-curl -O http://mirrors.aliyun.com/repo/Centos-7.repo
-4.清理缓存
-yum clean all
-5.重新生成缓存
-yum makecache
-6. 查看yum源信息
-yum repolist
-```
-
   地址:
 
 <a href="http://man.linuxde.net/yum" target="_blank">http://man.linuxde.net/yum</a>
@@ -354,77 +361,5 @@ centos PHP环境搭建
 	
 	firewall-cmd --reload 
 ```
-```
-// 执行sh脚本
-chmod +x hello.sh
-./home/test/shell/hello.sh
-/home/test/shell/hello.sh
-sh /home/test/shell/hello.sh
-```
 
 
-mysql文章
-
-<a href="http://blog.csdn.net/gebitan505/article/details/54613549" target="_blank">http://blog.csdn.net/gebitan505/article/details/54613549</a>
-
-centos7重置密码。
-<a href="http://blog.csdn.net/keepd/article/details/77151006" target="_blank">http://blog.csdn.net/keepd/article/details/77151006</a>
-
-mysql: 
-``` 
-	1.用户名和密码： root root
-	2.远程连接用户名和密码： admin admin
-```
-
-添加用户名和密码方法：
-<a href="http://www.cnblogs.com/chenggege/p/7761255.html" target="_blank">http://www.cnblogs.com/chenggege/p/7761255.html</a>	
-
-```
-	mysql 语法：
-	
-	show databases;  //查询所有db
-	use db;  //选中要操作的数据库
-	create table tableName (
-		id number,
-		bookName varchar(20),
-		price varchar(20)
-	);		//创建表
-
-	select * from tableName;	//查询所有信息
-
-	slecet * from tableName where type=xxx;	//根据条件查询所有信息
-
-	update tableName set type='xxx' where name="shuigu";//根据条件更新某条数据
-
-	delete from tableName where name='xxx' //删除单条数据
-
-
-	 DROP DATABASE 库名;  //删除db数据库
-
-	 DROP TABLE 表名；  //删除表
-
-	DELETE FROM 表名;  //清空表
-```
-
-### 常用命令
-```
-logout  // 注销
-exit    // 注销
-shutdown -h now // 立即关机
-reboot  // 重启
-clear  // 清屏
-
-find -name *.c // 当前目录查找所有的c文件，忽略大小写
-find / -name my.text // 当前目录下查找my.text
-
-df // 查看磁盘空间
-de -h // 以可读性较高的形式展示大小
-free  // 查看内存还有情况
-free -h // -m以MB为单位查看内存使用情况,-g以g为单位查看，常用-m.
-
-head // 查看一个文件的前n行，不指定默认10行。
-head -n 文件路径 // n表示数字
-
-tail // 查看文件末n行
-
-less // 查看文件以较少内容进行输出。

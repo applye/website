@@ -7,7 +7,7 @@ tags:
   - 'react-native'
 comments: false
 date: 2019-04-15 22:12:38
-img: 'https://cdn.jsdelivr.ren/gh/879733672/images@cdn/img/202209041737718.jpg'
+img: 'https://raw.githubusercontent.com/879733672/images/cdn/img/202209041737718.jpg'
 ---
 ## React-native之开源Tab导航组件
 

@@ -7,7 +7,7 @@ tags:
 comments: false
 abbrlink: 4020
 date: 2019-05-14 22:50:16
-img: 'https://cdn.jsdelivr.ren/gh/879733672/images@cdn/img/202209041646159.jpg'
+img: 'https://raw.githubusercontent.com/879733672/images/cdn/img/202209041646159.jpg'
 ---
 
 ### 前端npm包发布
@@ -50,8 +50,12 @@ npm login       # 登录账号
 接下来会以问答形式向你了解你的用户名、密码以及公开的邮箱，之后输入：
 ```
 npm publish
+npm publish --access public  // 非公开发布. 默认情况下，有作用域的程序包以私有可见性发布。要发布具有公共可见性的范围限定的包，请使用npm publish --access public
 ```
 看到进度条，之后发布成功。
+
+修改版本号version，并发布
+npm version patch && npm publish
 
 5. 查询发布的包
 npm官网全局搜索即可，淘宝npm等镜像同步时间到搜索.
