@@ -218,9 +218,6 @@ PVE下安装Windows10并直通核显、键盘鼠标、声卡等设备详细步�
 https://www.simaek.com/archives/69/
 
 ```
-
-
-
 	查询是否自启动
 	systemctl list-unit-files
 
@@ -254,7 +251,6 @@ https://www.simaek.com/archives/69/
 -c ： 取消已经在进行的 shutdown 命令操作
 时间 ：指定系统关机的时间 ！若没有这个参数，系统默认 1 分钟后自动执行shutdown操作
 
-```
 shutdown -h now									立即关机
 shutdown -h +10									10分钟后关机
 shutdown -h 20:00								20:00分点关机
@@ -264,4 +260,230 @@ shutdown -r 20:35 								在时间为20:35时候重启(root用户使用)
 shutdown -c										取消上一次所做的命令
 shutdown -k "I will shutdown the systemc"    	发送警告信息给其他用户
 shutdown -h +10 "I will shutdown the systemc"   10分钟后关机并发送提示消息
+```
+
+### pve ct扩容
+
+```
+	lsblk -l  // 查看分区详细信息
+	cpt list // 列出所有的ct
+	cpt stop <vmid> 停掉要扩展的容器
+	lvs 可查看所有虚拟机使用存储大小
+	e2fsck -f /dev/pve/vm-<vmid>-disk-0 检查 ext4 文件系统无错误。
+	lvextend --size +8G /dev/pve/vm-<vmid>-disk-0 对 LV 扩容。
+	lvs 查看/检查扩容结果。
+	修改 /etc/pve/local/lxc/<vmid>.conf 文件中，对应的配置... vm-<vmid>-disk-0,size=xxG。
+	把 size 改为扩容后正确的大小，即 上一步lvs看到的大小。
+	如果 LV 中的文件系统是 ext4，resize2fs /dev/pve/vm-100-disk-0 对文件系统扩容。
+	如果不是 ext4，自己查找对应的文件系统扩容指令。
+	去 pve 的 web 管理页面，虚拟机的 resources 中，查看容量正确。
+	启动 这个 ct 虚拟机。
+```
+
+![](https://cdn.jsdelivr.net/gh/879733672/images@cdn/img/202309092319165.png)
+
+ 在管理LXC资源时，UI管理工具只能增加LXC磁盘的空间，不能缩小。而在某些情况下（比如云空间，无法轻易扩展磁盘的情况）需要缩小LXC的磁盘空间(尤其是rootfs)。
+
+LXC 缩小磁盘空间步骤：
+1. 关闭LXC
+2. 运行e2fsck 检查lxc的磁盘
+
+```
+e2fsck -fy /dev/pve/vm-100-disk-0
+```
+3. 运行resize2fs 调整lxc磁盘空间
+```
+#假设从原来15G 的磁盘空间缩小到10G
+resize2fs /dev/pve/vm-100-disk-0 10G
+```
+4. 运行lvreduce 缩小磁盘空间
+```
+注意：请确保前置步骤均已正确执行！
+lvreduce -L 10G /dev/pve/vm-100-disk-0
+```
+5. 修改LXC的配置文件
+```
+nano /etc/pve/lxc/100.conf
+rootfs: local-lvm:vm-100-disk-0,size=15G 改成 rootfs: local-lvm:vm-100-disk-0,size=10G
+```
+
+6. 重启LXC，使用df -h查看 变更后的空间
+
+
+
+#### PVE部署Ubuntu20.04 LXC容器用于安装docker，LXC部署完成后可以进行如下操作。
+1. LXC需要勾选“无特权的容器”
+2. 在创建完成后需要到“选项-签名”下勾选“嵌套”，这个主要是可以使LXC里可以继续运行相关虚拟化工具，比如docker，不然会报错。
+
+
+
+ubuntu更新软件源命令有：
+
+* 打开终端，输入以下命令备份原有的软件源列表：
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+
+* 打开软件源列表文件：
+
+sudo nano /etc/apt/sources.list
+
+* 将原有的软件源地址替换为国内的镜像源地址，例如将默认的 http://archive.ubuntu.com/ubuntu/ 替换为 http://mirrors.aliyun.com/ubuntu/，也可以使用以下命令进行替换（不用打开文件了）：
+
+sudo sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list
+
+* 保存并退出软件源列表文件。
+
+* 更新软件源列表：
+
+sudo apt-get update
+
+#### 命令使用
+
+1、apt-get update，更新系统软件源；2、apt-get upgrade，更新升级所有软件；3、apt-get upgrade 软件名，更新某个软件。
+
+具体ubuntu更新软件源命令有以下几种：
+
+1.更新系统软件源的命令。
+
+apt-get update
+
+2.更新升级所有软件的命令。
+
+apt-get upgrade
+
+3.更新某个软件的命令。
+
+apt-get upgrade 软件名
+
+相关软件操作命令：
+
+apt list --upgradable #查看可更新的软件
+
+apt-get dist-upgrade #升级ubuntu系统版本
+
+apt-get install package_name #安装一个软件包
+
+apt-get remove package #删除一个软件包
+
+apt-get help #查看其他apt-get命令
+
+#### ubuntu 安装ssh
+
+```
+sudo ps -e | grep ssh   // 查看是否存在ssh
+
+// 其他查看 Linux服务管理的两种方式service 部分service命令
+
+sudo apt install net-tools  // 一个显示网络连接和路由信息的实用工具
+
+netstat -tlnp  // 显示所有的TCP和UDP端口
+
+
+ufw allow ssh // 打开防火墙
+```
+
+#### ubuntu安装docker
+
+安装docker我是按照官网的流程来的
+
+* 卸载原来的docker
+```
+sudo apt-get remove docker docker-engine docker.io containerd runc
+```
+* 安装apt-transport-https 等软件包支持https协议的源
+```
+$ sudo apt-get update
+$ sudo apt-get  install \
+   apt-transport-https \
+   ca-certificates \
+   curl \
+   gnupg-agent \
+   software-properties-common
+```
+* 添加GPG密钥
+```
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+```
+* 验证密钥
+```
+sudo apt-key fingerprint 0EBFCD88 
+```
+* 显示如下就正确了
+```
+pub rsa4096 2017-02-22 [SCEA]
+ 9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88
+uid [ unknown] Docker Release (CE deb) <docker@docker.com>
+sub rsa4096 2017-02-22 [S]
+```
+* 添加官方软件源
+```
+$ sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+```
+* 安装docker
+```
+ $ sudo apt-get update
+ $ sudo apt-get install docker-ce docker-ce-cli containerd.io
+ ```
+*安装完成后docker就自动启动了并设置好了开机启动
+普通用户没有docker的运行权限，可以用sudo提权后使用，但是不是很方便，可以通过以下命令讲用户添加到docker组，使用docker就不需要sudo提权了，your-user就是你平时登录的用户。
+```
+$ sudo  usermod -aG docker your-user
+```
+* 更改docker的镜像源加速pull速度。 https://yeasy.gitbook.io/docker_practice/install/mirror
+对于使用 systemd 的系统（Ubuntu 16.04+、Debian 8+、CentOS 7），请在 /etc/docker/daemon.json 中写入如下内容（如果文件不存在请新建该文件）
+```
+$ vim /etc/docker/daemon.json
+```
+
+Esc :wq 保存退出
+重启相关服务
+```
+$ sudo systemctl daemon-reload
+$ sudo systemctl restart docker
+```
+* 测试下载镜像
+```
+$ docker pull ubuntu:20.04
+```
+* 列出镜像,-a 列出所有镜像库包括临时文件
+```
+$ docker images -a 
+```
+* tag 添加镜像标签
+```
+$ docker tag ubuntu:latest myubuntu:latest
+```
+* inspect查看镜像的详细信息，-f可以指定显示参数
+```
+$ docker inspect ubuntu:20.04
+```
+* history 查看镜像历史，使用--no-trunc完全显示
+```
+$ docker history ubuntu:20.04
+```
+* 镜像搜索，搜索官方库中的镜像
+```
+$ docker search --filter=is-official=true nginx 
+```
+* 删除镜像，镜像被依赖使用时无法删除，需要停掉容器才能删除
+```
+$ docker rmi myubuntu:latest
+```
+* 临时运行一个docker 
+```
+$ docker run ubuntu:20.04 echo 'nihao'
+```
+* 查看所有容器
+```
+$ docker ps -a
+```
+* 删除容器,后边参数是ps -a得到的
+```
+$ docker rm 46ed70f69
+```
+* 然后就能删除对应的镜像了 清理镜像-a 清理无用镜像，-f 强制删除镜像不提醒
+```
+$ docker image prune -a
 ```
